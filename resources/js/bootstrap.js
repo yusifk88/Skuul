@@ -1,8 +1,10 @@
 window._ = require('lodash');
 import {store} from "./plugins/store";
+
 try {
     require('bootstrap');
-} catch (e) {}
+} catch (e) {
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -11,20 +13,27 @@ try {
  */
 
 window.axios = require('axios');
-window.axios.defaults.baseURL="http://127.0.0.1:8000/api";
+window.axios.defaults.baseURL = "http://127.0.0.1:8000/api";
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.token;
 
 window.axios.interceptors.response.use(
-    function (response){
+    function (response) {
 
         store.state.successMessage = response.data.message;
-        store.state.flashSuccess=true;
+        store.state.flashErro = false;
+        store.state.flashSuccess = true;
+        return response;
     },
-    function (error){
+    function (error) {
 
-            store.state.errors = error.response.data;
-            store.state.flashErro=true;
+        store.state.errors = error.response.data;
+        store.state.flashSuccess = false;
 
+        store.state.flashErro = false;
+        store.state.flashErro = true;
+
+        return Promise.reject(error);
     }
 );
 

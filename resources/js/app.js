@@ -28,31 +28,42 @@ window.Vue = require('vue').default;
 import 'es6-promise/auto';
 import {store} from "./plugins/store";
 import vuetify from "./plugins/vuetify";
-import navDrawer from "./components/NavDrawer";
+import NavDrawer from "./components/NavDrawer";
 import SuccessComponent from "./components/SuccessComponent";
 import ErrorComponent from "./components/ErrorComponent";
 import {router} from "./router";
+import GetStartedComponent from "./components/GetStartedComponent";
 const app = new Vue({
     el: '#app',
     vuetify,
     router,
     store,
     components:{
-        navDrawer,
+        NavDrawer,
         SuccessComponent,
-        ErrorComponent
+        ErrorComponent,
+        GetStartedComponent
     },
     data(){
       return{
           number:0,
-          MiniNav:false,
+          showMiniVariant:false,
 
       }
     },
     methods:{
 
+        changeNavVariant(){
+            this.showMiniVariant=!this.showMiniVariant;
+        }
+    },
+    computed:{
+      user(){
+          return store.state.user;
+      }
     },
     mounted() {
+        store.commit('init');
 
     }
 });

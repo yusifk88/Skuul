@@ -1,11 +1,13 @@
 <template>
     <v-navigation-drawer
-        :mini-variant="MiniNav"
+        :mini-variant="showMiniVariant"
         fixed
         floating
         app
         color="teal"
         dark
+        width="200"
+        :expand-on-hover="showMiniVariant"
     >
         <v-list-item>
             <v-list-item-content>
@@ -47,13 +49,12 @@
 
 <script>
 export default {
+    name: "NavDrawer",
     props: {
-        MiniNav: {
-            default: false,
-            type: Boolean
+        showMiniVariant: {
+            default: true
         }
     },
-    name: "NavDrawer",
     data() {
         return {
             generalNavs: [
@@ -79,7 +80,8 @@ export default {
                 },
             ]
         }
-    }
+    },
+
 }
 </script>
 

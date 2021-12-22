@@ -108,6 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "SignUp",
   data: function data() {
@@ -144,7 +145,13 @@ __webpack_require__.r(__webpack_exports__);
         formData.append("email", this.email);
         formData.append("password_confirmation", this.password_confirmation);
         axios.post('/admin/signup', formData).then(function (res) {
-          console.log(res.data);
+          console.log(res.data.data.token);
+          localStorage.setItem('token', res.data.data.token);
+
+          _this.$router.push('/');
+
+          _this.$store.commit('init');
+
           _this.progress = false;
         })["catch"](function (error) {
           _this.progress = false;
@@ -244,6 +251,20 @@ var render = function () {
     "v-form",
     {
       ref: "signup_form",
+      on: {
+        submit: function ($event) {
+          return _vm.signup()
+        },
+        keydown: function ($event) {
+          if (
+            !$event.type.indexOf("key") &&
+            _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+          ) {
+            return null
+          }
+          return _vm.signup()
+        },
+      },
       model: {
         value: _vm.formValid,
         callback: function ($$v) {
@@ -399,29 +420,6 @@ var render = function () {
         ],
         1
       ),
-      _vm._v(" "),
-      _c("center", [
-        _c(
-          "p",
-          { staticClass: "mt-5", staticStyle: { "z-index": "999!important" } },
-          [
-            _vm._v("Already have an account?\n            "),
-            _c(
-              "v-btn",
-              {
-                attrs: {
-                  to: "/auth/login",
-                  text: "",
-                  color: "teal",
-                  small: "",
-                },
-              },
-              [_vm._v("Login")]
-            ),
-          ],
-          1
-        ),
-      ]),
     ],
     1
   )

@@ -92,6 +92,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Authentication",
@@ -354,7 +367,12 @@ var render = function () {
                                   staticClass:
                                     "mt-5 teal--text font-weight-light",
                                 },
-                                [_vm._v("Welcome to Skull")]
+                                [
+                                  _vm._v(
+                                    "Welcome to " +
+                                      _vm._s(_vm.$store.state.AppName)
+                                  ),
+                                ]
                               ),
                               _vm._v(" "),
                               _c(
@@ -366,6 +384,61 @@ var render = function () {
                                   ),
                                 ]
                               ),
+                              _vm._v(" "),
+                              _vm.$route.path === "/auth/signup"
+                                ? _c("center", [
+                                    _c(
+                                      "p",
+                                      {
+                                        staticClass: "mt-5 text--disabled",
+                                        staticStyle: {
+                                          "z-index": "999!important",
+                                        },
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Already have an account?\n                                "
+                                        ),
+                                        _c(
+                                          "v-btn",
+                                          {
+                                            attrs: {
+                                              to: "/auth/login",
+                                              text: "",
+                                              color: "teal",
+                                              small: "",
+                                            },
+                                          },
+                                          [_vm._v("Login")]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ])
+                                : _c("center", [
+                                    _c(
+                                      "p",
+                                      { staticClass: "mt-5 text--disabled" },
+                                      [
+                                        _vm._v(
+                                          "Are you new here?\n                                "
+                                        ),
+                                        _c(
+                                          "v-btn",
+                                          {
+                                            attrs: {
+                                              to: "/auth/signup",
+                                              text: "",
+                                              color: "teal",
+                                              small: "",
+                                            },
+                                          },
+                                          [_vm._v("Signup Now!")]
+                                        ),
+                                      ],
+                                      1
+                                    ),
+                                  ]),
                             ],
                             1
                           ),
@@ -392,7 +465,9 @@ var render = function () {
         1
       ),
       _vm._v(" "),
-      _c("bottom-design"),
+      _vm.$route.path === "/auth/signup" || _vm.$route.path === "/auth/login"
+        ? _c("bottom-design")
+        : _vm._e(),
     ],
     1
   )

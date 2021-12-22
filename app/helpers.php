@@ -4,7 +4,7 @@ use Illuminate\Http\JsonResponse;
 
 if (!function_exists('success')) {
 
-    function success($data = [], $message = "Request process successfully", $code = 200): JsonResponse
+    function success($data = [], string $message = "Request process successfully", int $code = 200): JsonResponse
     {
 
         return response()->json(['data' => $data, 'message' => $message], $code);

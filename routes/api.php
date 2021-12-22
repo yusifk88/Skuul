@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\SchoolsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/{type}/signup', [AuthController::class, 'signup']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', [AuthController::class, 'user']);
+    Route::post('/school', [SchoolsController::class, 'store']);
+    Route::post('/settings/{id}', [SchoolsController::class, 'updateSettings']);
+
 });

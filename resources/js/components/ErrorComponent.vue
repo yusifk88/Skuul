@@ -1,13 +1,15 @@
 <template>
     <v-snackbar
-        color="red lighten-5 red--text"
-        dark
+        color="red"
+        v-if="$store.state.errors"
         v-model="$store.state.flashErro"
         timeout="9000"
         absolute
         app
         top
         right
+        text
+        tile
         transition="slide-x-reverse-transition"
     >
 

@@ -1,5 +1,10 @@
 <template>
-    <v-form v-model="formValid" ref="signup_form">
+    <v-form
+        v-model="formValid"
+        ref="signup_form"
+        @submit="signup()"
+        @keydown.enter="signup()"
+    >
 
         <h2 class="ma-5 font-weight-light teal--text w-100 text-center">
             Signup now for free
@@ -87,11 +92,7 @@
         </v-row>
 
 
-        <center>
-            <p class="mt-5" style="z-index: 999!important;">Already have an account?
-                <v-btn to="/auth/login" text color="teal" small>Login</v-btn></p>
 
-        </center>
     </v-form>
 </template>
 
@@ -131,8 +132,13 @@ export default {
 
                 axios.post('/admin/signup',formData)
                     .then(res=>{
-                        console.log(res.data);
+                        console.log(res.data.data.token);
+
+                        localStorage.setItem('token',res.data.data.token);
+                        this.$router.push('/');
+                        this.$store.commit('init');
                         this.progress=false;
+
                     })
 
                 .catch(error=>{

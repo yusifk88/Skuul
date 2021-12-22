@@ -25,11 +25,7 @@
             dark
       >Login</v-btn>
 
-      <center>
-          <p class="mt-5">Are you new here?
-              <v-btn to="/auth/signup" text color="teal" small>Signup Now!</v-btn></p>
 
-      </center>
   </v-form>
 
 </template>

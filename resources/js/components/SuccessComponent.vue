@@ -8,6 +8,7 @@
     app
     top
     right
+    tile
     transition="slide-x-reverse-transition"
 >
     {{$store.state.successMessage}}
