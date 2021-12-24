@@ -42,6 +42,26 @@
                     <v-list-item-title>{{ item.title }}</v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
+
+
+            <v-subheader>Structures</v-subheader>
+            <v-list-item
+                v-for="item in structureNavs"
+                :key="item.title"
+                link
+                :to="item.route"
+            >
+                <v-list-item-icon>
+                    <v-icon>{{ item.icon }}</v-icon>
+                </v-list-item-icon>
+
+                <v-list-item-content>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+
+
+
         </v-list>
     </v-navigation-drawer>
 
@@ -78,7 +98,30 @@ export default {
                     icon: 'mdi-account-multiple',
                     route:'/parents'
                 },
-            ]
+            ],
+            structureNavs: [
+                {
+                    title: 'Grades/Levels',
+                    icon: 'mdi-warehouse',
+                    route: '/grades'
+                },
+                {
+                    title: 'Classes',
+                    icon: 'mdi-home-outline',
+                    route: '/classes'
+                },
+                {
+                    title: 'Teachers',
+                    icon: 'mdi-account-multiple',
+                    route: '/teachers'
+                },
+                {
+                    title: 'Parents',
+                    icon: 'mdi-account-multiple',
+                    route:'/parents'
+                },
+            ],
+
         }
     },
 

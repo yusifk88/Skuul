@@ -11,10 +11,10 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
 
     </head>
-    <body class="bg-light">
+    <body class="grey">
     <!-- App.vue -->
 
-    <v-app id="app" class="bg-light">
+    <v-app id="app" class="grey">
 <nav-drawer
     :show-mini-variant="showMiniVariant"
     v-if="$route.path!='/auth/login' && $route.path!='/auth/signup' "
@@ -70,7 +70,7 @@
         </v-app-bar>
 
         <!-- Sizes your content based upon application components -->
-        <v-main class="bg-light">
+        <v-main class="grey lighten-5">
 
             <!-- Provides the application the proper gutter -->
             <v-container fluid>

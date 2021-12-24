@@ -5486,6 +5486,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NavDrawer",
   props: {
@@ -5503,6 +5523,23 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Students',
         icon: 'mdi-account-multiple',
         route: '/students'
+      }, {
+        title: 'Teachers',
+        icon: 'mdi-account-multiple',
+        route: '/teachers'
+      }, {
+        title: 'Parents',
+        icon: 'mdi-account-multiple',
+        route: '/parents'
+      }],
+      structureNavs: [{
+        title: 'Grades/Levels',
+        icon: 'mdi-warehouse',
+        route: '/grades'
+      }, {
+        title: 'Classes',
+        icon: 'mdi-home-outline',
+        route: '/classes'
       }, {
         title: 'Teachers',
         icon: 'mdi-account-multiple',
@@ -6130,6 +6167,18 @@ var routes = [{
   name: "Dashboard",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_pages_Dashboard_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Dashboard */ "./resources/js/pages/Dashboard.vue"));
+  }
+}, {
+  path: '/grades',
+  name: "Grades",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_grades_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/grades */ "./resources/js/pages/grades/index.vue"));
+  }
+}, {
+  path: '/classes',
+  name: "Classes",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_classes_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/classes */ "./resources/js/pages/classes/index.vue"));
   }
 }, {
   path: '/auth',
@@ -31234,6 +31283,29 @@ var render = function () {
           _c("v-subheader", [_vm._v("General")]),
           _vm._v(" "),
           _vm._l(_vm.generalNavs, function (item) {
+            return _c(
+              "v-list-item",
+              { key: item.title, attrs: { link: "", to: item.route } },
+              [
+                _c(
+                  "v-list-item-icon",
+                  [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-list-item-content",
+                  [_c("v-list-item-title", [_vm._v(_vm._s(item.title))])],
+                  1
+                ),
+              ],
+              1
+            )
+          }),
+          _vm._v(" "),
+          _c("v-subheader", [_vm._v("Structures")]),
+          _vm._v(" "),
+          _vm._l(_vm.structureNavs, function (item) {
             return _c(
               "v-list-item",
               { key: item.title, attrs: { link: "", to: item.route } },
@@ -94693,7 +94765,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_pages_Dashboard_vue":1,"resources_js_pages_Authentication_vue":1,"resources_js_pages_Login_vue":1,"resources_js_pages_SignUp_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_pages_Dashboard_vue":1,"resources_js_pages_grades_index_vue":1,"resources_js_pages_classes_index_vue":1,"resources_js_pages_Authentication_vue":1,"resources_js_pages_Login_vue":1,"resources_js_pages_SignUp_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

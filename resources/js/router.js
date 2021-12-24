@@ -10,6 +10,16 @@ const routes = [
         component: () => import('./pages/Dashboard')
     },
     {
+        path: '/grades',
+        name: "Grades",
+        component: () => import('./pages/grades')
+    },
+    {
+        path: '/classes',
+        name: "Classes",
+        component: () => import('./pages/classes')
+    },
+    {
       path: '/auth',
       redirect:'/auth/login'
     },
