@@ -3,7 +3,7 @@
     <span>
 
     <v-img
-        :src="`${ImgPreview}`"
+        :src="`${defaultPreview}`"
         eager
     >
         <span class="overlay" @mouseover="showControlls=true" @mouseleave="showControlls=false" >
@@ -49,6 +49,9 @@ export default {
         },
         RemoveLabel:{
             default:"Remove Photo"
+        },
+        Preview:{
+            default:null
         }
     },
     data(){
@@ -60,7 +63,10 @@ export default {
     computed:{
       hasImage(){
           return this.ImgPreview!=="/img/photo.jpg";
-      }
+      },
+        defaultPreview(){
+          return this.Preview && this.ImgPreview=='/img/photo.jpg' ? this.Preview : this.ImgPreview;
+        }
     },
     methods:{
         SelectPhoto(){

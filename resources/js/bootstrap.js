@@ -1,11 +1,14 @@
 window._ = require('lodash');
 import {store} from "./plugins/store";
+import {router} from "./router";
 
 try {
     require('bootstrap');
 } catch (e) {
 }
 
+
+window.dayjs = require('dayjs');
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -27,11 +30,18 @@ window.axios.interceptors.response.use(
     },
     function (error) {
 
+
         store.state.errors = error.response.data;
         store.state.flashSuccess = false;
 
         store.state.flashErro = false;
         store.state.flashErro = true;
+
+
+
+        if (error.response.status===401){
+            router.push({path:"/auth/login"});
+        }
 
         return Promise.reject(error);
     }

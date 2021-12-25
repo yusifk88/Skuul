@@ -43,7 +43,7 @@ export default {
     name: "ErrorComponent",
     computed:{
         keys(){
-            return Object.keys(this.$store.state.errors.errors);
+            return this.$store.state.errors && this.$store.state.errors.errors ?Object.keys(this.$store.state.errors.errors) : [];
 
         }
     }

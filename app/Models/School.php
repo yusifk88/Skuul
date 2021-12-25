@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class School extends Model
@@ -18,6 +19,11 @@ class School extends Model
     {
         return $this->hasOne(SchoolSetting::class, 'school_id', 'id');
 
+    }
+
+    public function subjects(): HasMany
+    {
+        return $this->hasMany(Subject::class, 'school_id', 'id');
     }
 
 

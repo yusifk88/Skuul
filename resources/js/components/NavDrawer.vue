@@ -111,9 +111,9 @@ export default {
                     route: '/classes'
                 },
                 {
-                    title: 'Teachers',
-                    icon: 'mdi-account-multiple',
-                    route: '/teachers'
+                    title: 'Subjects',
+                    icon: 'mdi-book-open-page-variant-outline',
+                    route: '/subjects'
                 },
                 {
                     title: 'Parents',

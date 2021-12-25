@@ -375,10 +375,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "Classes",
+  name: "Index",
   components: {
     NewClass: _components_NewClass__WEBPACK_IMPORTED_MODULE_1__["default"],
     TitleBarComponent: _components_TitleBarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -391,6 +395,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    classCreated: function classCreated(cl) {
+      this.getClasses();
+    },
     getClasses: function getClasses() {
       var _this = this;
 
@@ -1202,7 +1209,7 @@ var render = function () {
     "span",
     [
       _c("title-bar-component", {
-        attrs: { "add-label": "Create Class" },
+        attrs: { "add-label": "Create Class", "btn-icon": "mdi-plus" },
         on: {
           create: function (b) {
             return (_vm.newCLass = b)
@@ -1275,6 +1282,7 @@ var render = function () {
               closed: function ($event) {
                 _vm.newCLass = false
               },
+              created: _vm.classCreated,
             },
           }),
         ],
