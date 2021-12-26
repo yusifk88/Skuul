@@ -146,7 +146,7 @@ export default {
                 {
                     title: 'Notifications',
                     icon: 'mdi-message-badge-outline',
-                    route: '/subjects'
+                    route: '/notifications'
                 },
                 {
                     title: 'Notice Board',

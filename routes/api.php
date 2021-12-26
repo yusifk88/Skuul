@@ -6,6 +6,7 @@ use App\Http\Controllers\SchoolClassesController;
 use App\Http\Controllers\SchoolsController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\SubjectsController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,5 +70,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/student/{student_id}', [StudentsController::class, 'update']);
     Route::get('/students', [StudentsController::class, 'index']);
 
+    /**
+     * Teacher routes
+     */
+
+    Route::post('/teacher', [TeacherController::class, 'store']);
+    Route::post('/teacher/{id}', [TeacherController::class, 'update']);
+    Route::get('teachers', [TeacherController::class, 'index']);
 
 });
