@@ -34,7 +34,8 @@ class CreateStudentRequest extends FormRequest
             'admission_date' => 'required|date',
             'guardian_first_name' => 'required',
             'guardian_last_name' => 'required',
-            'guardian_phone_number' => 'required',
+            'guardian_phone_number' => 'required|unique:students,guardian_phone_number',
+            'guardian_email'=>'nullable|unique:students,guardian_email',
             'class_id' => 'required|numeric|exists:school_classes,id'
         ];
     }

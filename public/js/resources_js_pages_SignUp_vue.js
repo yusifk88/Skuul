@@ -348,7 +348,7 @@ var render = function () {
                   type: "Email",
                   outlined: "",
                   filled: "",
-                  label: "Last Name",
+                  label: "Email",
                   color: "teal",
                   rules: _vm.emailRules,
                 },

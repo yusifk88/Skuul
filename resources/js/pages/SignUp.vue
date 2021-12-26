@@ -49,7 +49,7 @@
             type="Email"
             outlined
             filled
-            label="Last Name"
+            label="Email"
             color="teal"
             :rules="emailRules"
 

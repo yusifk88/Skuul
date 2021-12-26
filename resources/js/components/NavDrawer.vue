@@ -60,6 +60,22 @@
                 </v-list-item-content>
             </v-list-item>
 
+            <v-subheader>Administration</v-subheader>
+            <v-list-item
+                v-for="item in adminNav"
+                :key="item.title"
+                link
+                :to="item.route"
+            >
+                <v-list-item-icon>
+                    <v-icon>{{ item.icon }}</v-icon>
+                </v-list-item-icon>
+
+                <v-list-item-content>
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+
 
 
         </v-list>
@@ -80,22 +96,22 @@ export default {
             generalNavs: [
                 {
                     title: 'Dashboard',
-                    icon: 'mdi-view-dashboard',
+                    icon: 'mdi-view-dashboard-outline',
                     route: '/'
                 },
                 {
                     title: 'Students',
-                    icon: 'mdi-account-multiple',
+                    icon: 'mdi-account-multiple-outline',
                     route: '/students'
                 },
                 {
                     title: 'Teachers',
-                    icon: 'mdi-account-multiple',
+                    icon: 'mdi-account-multiple-outline',
                     route: '/teachers'
                 },
                 {
                     title: 'Parents',
-                    icon: 'mdi-account-multiple',
+                    icon: 'mdi-account-multiple-outline',
                     route:'/parents'
                 },
             ],
@@ -114,11 +130,33 @@ export default {
                     title: 'Subjects',
                     icon: 'mdi-book-open-page-variant-outline',
                     route: '/subjects'
+                }
+            ],
+            adminNav: [
+                {
+                    title: 'Reports',
+                    icon: 'mdi-chart-box-outline',
+                    route: '/reports'
                 },
                 {
-                    title: 'Parents',
-                    icon: 'mdi-account-multiple',
-                    route:'/parents'
+                    title: 'Fees',
+                    icon: 'mdi-currency-usd',
+                    route: '/fees'
+                },
+                {
+                    title: 'Notifications',
+                    icon: 'mdi-message-badge-outline',
+                    route: '/subjects'
+                },
+                {
+                    title: 'Notice Board',
+                    icon: 'mdi-billboard',
+                    route:'/notice-board'
+                },
+                {
+                    title: 'Settings',
+                    icon: 'mdi-cog-outline',
+                    route:'/settings'
                 },
             ],
 

@@ -15,7 +15,7 @@ class StudentRepository
         $user = Auth::user();
         $data = $request->all();
         if ($request->hasFile('photo')) {
-            $data['photo_url'] = $request->file('photo')->store('student_photos');
+            $data['photo_url'] = $request->file('photo')->store('public/student_photos');
         }
         $data['school_id'] = $user->school_id;
         $student = new Student($data);

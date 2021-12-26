@@ -5506,6 +5506,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NavDrawer",
   props: {
@@ -5517,19 +5533,19 @@ __webpack_require__.r(__webpack_exports__);
     return {
       generalNavs: [{
         title: 'Dashboard',
-        icon: 'mdi-view-dashboard',
+        icon: 'mdi-view-dashboard-outline',
         route: '/'
       }, {
         title: 'Students',
-        icon: 'mdi-account-multiple',
+        icon: 'mdi-account-multiple-outline',
         route: '/students'
       }, {
         title: 'Teachers',
-        icon: 'mdi-account-multiple',
+        icon: 'mdi-account-multiple-outline',
         route: '/teachers'
       }, {
         title: 'Parents',
-        icon: 'mdi-account-multiple',
+        icon: 'mdi-account-multiple-outline',
         route: '/parents'
       }],
       structureNavs: [{
@@ -5544,10 +5560,27 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Subjects',
         icon: 'mdi-book-open-page-variant-outline',
         route: '/subjects'
+      }],
+      adminNav: [{
+        title: 'Reports',
+        icon: 'mdi-chart-box-outline',
+        route: '/reports'
       }, {
-        title: 'Parents',
-        icon: 'mdi-account-multiple',
-        route: '/parents'
+        title: 'Fees',
+        icon: 'mdi-currency-usd',
+        route: '/fees'
+      }, {
+        title: 'Notifications',
+        icon: 'mdi-message-badge-outline',
+        route: '/subjects'
+      }, {
+        title: 'Notice Board',
+        icon: 'mdi-billboard',
+        route: '/notice-board'
+      }, {
+        title: 'Settings',
+        icon: 'mdi-cog-outline',
+        route: '/settings'
       }]
     };
   }
@@ -31344,6 +31377,29 @@ var render = function () {
           _c("v-subheader", [_vm._v("Structures")]),
           _vm._v(" "),
           _vm._l(_vm.structureNavs, function (item) {
+            return _c(
+              "v-list-item",
+              { key: item.title, attrs: { link: "", to: item.route } },
+              [
+                _c(
+                  "v-list-item-icon",
+                  [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-list-item-content",
+                  [_c("v-list-item-title", [_vm._v(_vm._s(item.title))])],
+                  1
+                ),
+              ],
+              1
+            )
+          }),
+          _vm._v(" "),
+          _c("v-subheader", [_vm._v("Administration")]),
+          _vm._v(" "),
+          _vm._l(_vm.adminNav, function (item) {
             return _c(
               "v-list-item",
               { key: item.title, attrs: { link: "", to: item.route } },

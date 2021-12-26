@@ -229,7 +229,7 @@
                             filled
                             type="tel"
                             color="teal"
-                            label="Phone Number"
+                            label="Phone Number*"
                             :rules="$store.state.requiredRules"
                         ></v-text-field>
                     </v-col>
