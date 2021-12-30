@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 use JetBrains\PhpStorm\ArrayShape;
 
@@ -14,7 +15,7 @@ class CreateTeacherRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return \Auth::check();
+        return Auth::check();
     }
 
     /**
@@ -22,14 +23,16 @@ class CreateTeacherRequest extends FormRequest
      *
      * @return array
      */
-    #[ArrayShape(['first_name' => "string", 'last_name' => "string", 'gender' => "string", 'phone_number' => "string"])]
+    #[ArrayShape(['first_name' => "string", 'last_name' => "string", 'gender' => "string", 'phone_number' => "string", 'email' => 'string'])]
     public function rules(): array
     {
         return [
             'first_name' => 'required',
             'last_name' => 'required',
             'gender' => 'required',
-            'phone_number' => 'required'
+            'phone_number' => 'required|unique:teachers,phone_number',
+            'email' => 'unique:teachers,email|nullable',
+            'rank'=>'required'
         ];
     }
 }

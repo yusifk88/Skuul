@@ -43,8 +43,15 @@ class SchoolRepository
 
         $settings = SchoolSetting::find($id);
         $settings->update($request->all());
-
         return $settings;
+
+    }
+
+
+
+    public static function CurrentSchool(){
+        $user = Auth::user();
+        return School::find($user->school_id);
 
     }
 

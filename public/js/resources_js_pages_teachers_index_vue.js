@@ -89,12 +89,289 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewTeacher",
   props: ['edit', 'id'],
+  data: function data() {
+    return {
+      id_number: "",
+      first_name: "",
+      last_name: "",
+      other_names: "",
+      dob_menu: false,
+      date_menu1: false,
+      date_menu2: false,
+      assumed_date: dayjs().format('YYYY-MM-DD'),
+      accademic_qualification: "",
+      professional_qualification: "",
+      appointed_date: dayjs().format('YYYY-MM-DD'),
+      dob: '',
+      bank_name: "",
+      bank_account_number: "",
+      rank: null,
+      staff_number: "",
+      email: "",
+      phone_number: "",
+      ranks: [{
+        value: 'supi',
+        text: "Sup. i"
+      }, {
+        value: 'supii',
+        text: "Sup. ii"
+      }, {
+        value: 'Snr_sup_i',
+        text: "Snr. Sup. i"
+      }, {
+        value: 'Snr_sup_ii',
+        text: "Snr. Sup. ii"
+      }, {
+        value: 'asst_dr_i',
+        text: "Asst. Dir. i"
+      }, {
+        value: 'asst_dr_ii',
+        text: "Asst. Dir. ii"
+      }, {
+        value: 'dr_i',
+        text: "Dir. i"
+      }, {
+        value: 'dr_ii',
+        text: "Dir. ii"
+      }, {
+        value: 'other',
+        text: "Other"
+      }],
+      genders: [{
+        value: 'M',
+        text: "Male"
+      }, {
+        value: 'F',
+        text: "Female"
+      }],
+      gender: 'F',
+      progress: false
+    };
+  },
   computed: {
     title: function title() {
       return this.edit ? "Edit teacher" : "Create new teacher";
+    }
+  },
+  methods: {
+    save: function save() {
+      var _this = this;
+
+      if (this.$refs.teacher_form.validate()) {
+        this.progress = true;
+        var formData = new FormData();
+        formData.append('first_name', this.first_name);
+        formData.append('last_name', this.last_name);
+        formData.append('other_names', this.other_names);
+        formData.append('gender', this.gender);
+        formData.append('id_number', this.id_number);
+        formData.append('academic_qualification', this.accademic_qualification);
+        formData.append('professional_qualification', this.professional_qualification);
+        formData.append('appointment_date', this.appointed_date);
+        formData.append('date_assumed', this.assumed_date);
+        formData.append('bank', this.bank_name);
+        formData.append('account_number', this.bank_account_number);
+        formData.append('email', this.email);
+        formData.append('phone_number', this.phone_number);
+        formData.append('staff_id', this.staff_number);
+        axios.post('/teacher', formData).then(function (res) {
+          _this.done(res.data.data);
+
+          _this.progress = false;
+        })["catch"](function (error) {
+          _this.progress = false;
+        });
+      }
+    },
+    done: function done(teacher) {
+      var url = "/teachers/" + teacher.id;
+      this.$router.push({
+        path: url
+      });
+      this.$emit('closed');
     }
   }
 });
@@ -191,6 +468,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -201,8 +513,26 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      NewTeacher: false
+      NewTeacher: false,
+      teachers: [],
+      progress: false
     };
+  },
+  mounted: function mounted() {
+    this.getTeachers();
+  },
+  methods: {
+    getTeachers: function getTeachers() {
+      var _this = this;
+
+      this.progress = true;
+      axios.get('/teachers').then(function (res) {
+        _this.teachers = res.data.data;
+        _this.progress = false;
+      })["catch"](function (error) {
+        _this.progress = false;
+      });
+    }
   }
 });
 
@@ -442,9 +772,11 @@ var render = function () {
         [
           _c(
             "v-form",
+            { ref: "teacher_form" },
             [
               _c(
                 "v-row",
+                { attrs: { dense: "" } },
                 [
                   _c(
                     "v-col",
@@ -458,6 +790,13 @@ var render = function () {
                           label: "First Name*",
                           rules: _vm.$store.state.requiredRules,
                           autofocus: "",
+                        },
+                        model: {
+                          value: _vm.first_name,
+                          callback: function ($$v) {
+                            _vm.first_name = $$v
+                          },
+                          expression: "first_name",
                         },
                       }),
                     ],
@@ -476,28 +815,12 @@ var render = function () {
                           label: "last Name*",
                           rules: _vm.$store.state.requiredRules,
                         },
-                      }),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-row",
-                [
-                  _c(
-                    "v-col",
-                    { attrs: { cols: "12", sm: "6" } },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          outlined: "",
-                          filled: "",
-                          color: "teal",
-                          label: "other Names",
-                          autofocus: "",
+                        model: {
+                          value: _vm.last_name,
+                          callback: function ($$v) {
+                            _vm.last_name = $$v
+                          },
+                          expression: "last_name",
                         },
                       }),
                     ],
@@ -513,20 +836,131 @@ var render = function () {
                           outlined: "",
                           filled: "",
                           color: "teal",
-                          label: "Date of birth",
-                          rules: _vm.$store.state.requiredRules,
+                          label: "Other Names",
+                        },
+                        model: {
+                          value: _vm.other_names,
+                          callback: function ($$v) {
+                            _vm.other_names = $$v
+                          },
+                          expression: "other_names",
                         },
                       }),
                     ],
                     1
                   ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-row",
-                [
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c("v-select", {
+                        attrs: {
+                          outlined: "",
+                          filled: "",
+                          color: "teal",
+                          label: "Gender",
+                          items: _vm.genders,
+                          "item-color": "teal",
+                        },
+                        model: {
+                          value: _vm.gender,
+                          callback: function ($$v) {
+                            _vm.gender = $$v
+                          },
+                          expression: "gender",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c(
+                        "v-menu",
+                        {
+                          attrs: {
+                            transition: "scale-transition",
+                            "close-on-content-click": false,
+                            "offset-y": "",
+                            "max-width": "290px",
+                            "min-width": "auto",
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "activator",
+                              fn: function (ref) {
+                                var on = ref.on
+                                var attr = ref.attr
+                                return [
+                                  _c(
+                                    "v-text-field",
+                                    _vm._g(
+                                      _vm._b(
+                                        {
+                                          attrs: {
+                                            readonly: "",
+                                            outlined: "",
+                                            filled: "",
+                                            color: "teal",
+                                            label: "Date of birth",
+                                            rules:
+                                              _vm.$store.state.requiredRules,
+                                          },
+                                          model: {
+                                            value: _vm.dob,
+                                            callback: function ($$v) {
+                                              _vm.dob = $$v
+                                            },
+                                            expression: "dob",
+                                          },
+                                        },
+                                        "v-text-field",
+                                        attr,
+                                        false
+                                      ),
+                                      on
+                                    )
+                                  ),
+                                ]
+                              },
+                            },
+                          ]),
+                          model: {
+                            value: _vm.dob_menu,
+                            callback: function ($$v) {
+                              _vm.dob_menu = $$v
+                            },
+                            expression: "dob_menu",
+                          },
+                        },
+                        [
+                          _vm._v(" "),
+                          _c("v-date-picker", {
+                            attrs: { "no-title": "", color: "teal" },
+                            on: {
+                              input: function ($event) {
+                                _vm.dob_menu = false
+                              },
+                            },
+                            model: {
+                              value: _vm.dob,
+                              callback: function ($$v) {
+                                _vm.dob = $$v
+                              },
+                              expression: "dob",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
                   _c(
                     "v-col",
                     { attrs: { cols: "12", sm: "6" } },
@@ -536,8 +970,15 @@ var render = function () {
                           outlined: "",
                           filled: "",
                           color: "teal",
-                          label: "Rank",
-                          autofocus: "",
+                          type: "tel",
+                          label: "Phone Number *",
+                        },
+                        model: {
+                          value: _vm.phone_number,
+                          callback: function ($$v) {
+                            _vm.phone_number = $$v
+                          },
+                          expression: "phone_number",
                         },
                       }),
                     ],
@@ -553,8 +994,338 @@ var render = function () {
                           outlined: "",
                           filled: "",
                           color: "teal",
-                          label: "Date of birth",
+                          type: "email",
+                          label: "Email",
+                        },
+                        model: {
+                          value: _vm.email,
+                          callback: function ($$v) {
+                            _vm.email = $$v
+                          },
+                          expression: "email",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          outlined: "",
+                          filled: "",
+                          color: "teal",
+                          label: "Staff Number",
+                        },
+                        model: {
+                          value: _vm.staff_number,
+                          callback: function ($$v) {
+                            _vm.staff_number = $$v
+                          },
+                          expression: "staff_number",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          outlined: "",
+                          filled: "",
+                          color: "teal",
+                          label: "National ID Number",
+                          "persistent-hint": "",
+                          hint: "Social security number or passport number or driver's license, or any identity number ",
+                        },
+                        model: {
+                          value: _vm.id_number,
+                          callback: function ($$v) {
+                            _vm.id_number = $$v
+                          },
+                          expression: "id_number",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c("v-select", {
+                        attrs: {
+                          outlined: "",
+                          filled: "",
+                          color: "teal",
+                          label: "Rank *",
+                          items: _vm.ranks,
                           rules: _vm.$store.state.requiredRules,
+                        },
+                        model: {
+                          value: _vm.rank,
+                          callback: function ($$v) {
+                            _vm.rank = $$v
+                          },
+                          expression: "rank",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          outlined: "",
+                          filled: "",
+                          color: "teal",
+                          label: "Academic Qualification",
+                        },
+                        model: {
+                          value: _vm.accademic_qualification,
+                          callback: function ($$v) {
+                            _vm.accademic_qualification = $$v
+                          },
+                          expression: "accademic_qualification",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          outlined: "",
+                          filled: "",
+                          color: "teal",
+                          label: "Professional Qualification",
+                        },
+                        model: {
+                          value: _vm.professional_qualification,
+                          callback: function ($$v) {
+                            _vm.professional_qualification = $$v
+                          },
+                          expression: "professional_qualification",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c(
+                        "v-menu",
+                        {
+                          attrs: {
+                            transition: "scale-transition",
+                            "offset-y": "",
+                            "max-width": "290px",
+                            "min-width": "auto",
+                            "close-on-content-click": false,
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "activator",
+                              fn: function (ref) {
+                                var on = ref.on
+                                var attr = ref.attr
+                                return [
+                                  _c(
+                                    "v-text-field",
+                                    _vm._g(
+                                      {
+                                        attrs: {
+                                          outlined: "",
+                                          filled: "",
+                                          color: "teal",
+                                          label: "Date Appointed",
+                                          readonly: "",
+                                        },
+                                        model: {
+                                          value: _vm.appointed_date,
+                                          callback: function ($$v) {
+                                            _vm.appointed_date = $$v
+                                          },
+                                          expression: "appointed_date",
+                                        },
+                                      },
+                                      on
+                                    )
+                                  ),
+                                ]
+                              },
+                            },
+                          ]),
+                          model: {
+                            value: _vm.date_menu2,
+                            callback: function ($$v) {
+                              _vm.date_menu2 = $$v
+                            },
+                            expression: "date_menu2",
+                          },
+                        },
+                        [
+                          _vm._v(" "),
+                          _c("v-date-picker", {
+                            attrs: { "no-title": "", color: "teal" },
+                            on: {
+                              input: function ($event) {
+                                _vm.date_menu2 = false
+                              },
+                            },
+                            model: {
+                              value: _vm.appointed_date,
+                              callback: function ($$v) {
+                                _vm.appointed_date = $$v
+                              },
+                              expression: "appointed_date",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c(
+                        "v-menu",
+                        {
+                          attrs: {
+                            transition: "scale-transition",
+                            "offset-y": "",
+                            "max-width": "290px",
+                            "min-width": "auto",
+                            "close-on-content-click": false,
+                          },
+                          scopedSlots: _vm._u([
+                            {
+                              key: "activator",
+                              fn: function (ref) {
+                                var on = ref.on
+                                var attr = ref.attr
+                                return [
+                                  _c(
+                                    "v-text-field",
+                                    _vm._g(
+                                      {
+                                        attrs: {
+                                          outlined: "",
+                                          filled: "",
+                                          color: "teal",
+                                          label: "Date Assumed at Post",
+                                          readonly: "",
+                                        },
+                                        model: {
+                                          value: _vm.assumed_date,
+                                          callback: function ($$v) {
+                                            _vm.assumed_date = $$v
+                                          },
+                                          expression: "assumed_date",
+                                        },
+                                      },
+                                      on
+                                    )
+                                  ),
+                                ]
+                              },
+                            },
+                          ]),
+                          model: {
+                            value: _vm.date_menu1,
+                            callback: function ($$v) {
+                              _vm.date_menu1 = $$v
+                            },
+                            expression: "date_menu1",
+                          },
+                        },
+                        [
+                          _vm._v(" "),
+                          _c("v-date-picker", {
+                            attrs: { "no-title": "", color: "teal" },
+                            on: {
+                              input: function ($event) {
+                                _vm.date_menu1 = false
+                              },
+                            },
+                            model: {
+                              value: _vm.assumed_date,
+                              callback: function ($$v) {
+                                _vm.assumed_date = $$v
+                              },
+                              expression: "assumed_date",
+                            },
+                          }),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          outlined: "",
+                          filled: "",
+                          color: "teal",
+                          label: "Bank Name",
+                        },
+                        model: {
+                          value: _vm.bank_name,
+                          callback: function ($$v) {
+                            _vm.bank_name = $$v
+                          },
+                          expression: "bank_name",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12", sm: "6" } },
+                    [
+                      _c("v-text-field", {
+                        attrs: {
+                          outlined: "",
+                          filled: "",
+                          color: "teal",
+                          label: "Bank Account Number",
+                        },
+                        model: {
+                          value: _vm.bank_account_number,
+                          callback: function ($$v) {
+                            _vm.bank_account_number = $$v
+                          },
+                          expression: "bank_account_number",
                         },
                       }),
                     ],
@@ -565,6 +1336,33 @@ var render = function () {
               ),
             ],
             1
+          ),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-card-actions",
+        [
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              attrs: { text: "" },
+              on: {
+                click: function ($event) {
+                  return _vm.$emit("closed")
+                },
+              },
+            },
+            [_vm._v("cancel")]
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            { attrs: { color: "teal", text: "" }, on: { click: _vm.save } },
+            [_vm._v("Save")]
           ),
         ],
         1
@@ -705,12 +1503,78 @@ var render = function () {
       }),
       _vm._v(" "),
       _c(
+        "v-row",
+        [
+          _c(
+            "v-col",
+            { staticClass: "mx-auto", attrs: { cols: "12", sm: "10" } },
+            [
+              _c(
+                "v-list",
+                _vm._l(_vm.teachers, function (teacher) {
+                  return _c(
+                    "v-list-item",
+                    { key: teacher.id, attrs: { "two-line": "" } },
+                    [
+                      _c(
+                        "v-list-item-content",
+                        [
+                          _c("v-list-item-title", [
+                            _vm._v(
+                              _vm._s(teacher.first_name) +
+                                " " +
+                                _vm._s(teacher.last_name) +
+                                " " +
+                                _vm._s(teacher.other_names)
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _c("v-list-item-subtitle", [
+                            _c("strong", [_vm._v("Phone Number: ")]),
+                            _vm._v(
+                              _vm._s(teacher.phone_number) +
+                                "\n                            "
+                            ),
+                            _c("strong", [_vm._v("Gender: ")]),
+                            _vm._v(
+                              _vm._s(
+                                teacher.gender === "F" ? "Female" : "Male"
+                              ) + "\n\n                           "
+                            ),
+                            teacher.rank
+                              ? _c("span", [
+                                  _c("strong", [_vm._v("Rank: ")]),
+                                  _vm._v(
+                                    _vm._s(teacher.rank) +
+                                      "\n\n                           "
+                                  ),
+                                ])
+                              : _vm._e(),
+                          ]),
+                        ],
+                        1
+                      ),
+                    ],
+                    1
+                  )
+                }),
+                1
+              ),
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
         "v-dialog",
         {
           attrs: {
             width: "40%",
             fullscreen: _vm.$vuetify.breakpoint.mobile,
             persistent: "",
+            scrollable: "",
           },
           model: {
             value: _vm.NewTeacher,
@@ -720,7 +1584,15 @@ var render = function () {
             expression: "NewTeacher",
           },
         },
-        [_c("new-teacher")],
+        [
+          _c("new-teacher", {
+            on: {
+              closed: function ($event) {
+                _vm.NewTeacher = false
+              },
+            },
+          }),
+        ],
         1
       ),
     ],
