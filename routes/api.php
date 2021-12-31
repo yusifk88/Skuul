@@ -77,5 +77,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/teacher', [TeacherController::class, 'store']);
     Route::post('/teacher/{id}', [TeacherController::class, 'update']);
     Route::get('teachers', [TeacherController::class, 'index']);
+    Route::get('teacher/{id}', [TeacherController::class, 'show']);
 
 });

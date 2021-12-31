@@ -8,7 +8,7 @@
         v-model="grade_id"
         @change="$emit('selected',grade_id)"
         filled
-        color="teal"
+        :color="$store.state.app.ThemeColor"
         :rules="$store.state.requiredRules"
         outlined
         label="Grade"

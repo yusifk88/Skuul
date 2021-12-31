@@ -1,7 +1,7 @@
 <template>
     <v-autocomplete
         outlined
-        color="teal"
+        :color="$store.state.app.ThemeColor"
         filled
         label="Class"
         :rules="$store.state.requiredRules"

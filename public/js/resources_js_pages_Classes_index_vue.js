@@ -126,6 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewClass",
@@ -307,9 +308,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "TitleBarComponent",
-  props: ['title', 'AddLabel', 'BtnIcon'],
+  props: {
+    title: {},
+    AddLabel: {},
+    BtnIcon: {},
+    ShowAddBtn: {
+      "default": true,
+      type: Boolean
+    }
+  },
   computed: {
     MainTitle: function MainTitle() {
       return this.title ? this.title : this.$route.name;
@@ -784,7 +798,7 @@ var render = function () {
       "item-text": "name",
       "item-value": "id",
       filled: "",
-      color: "teal",
+      color: _vm.$store.state.app.ThemeColor,
       rules: _vm.$store.state.requiredRules,
       outlined: "",
       label: "Grade",
@@ -890,7 +904,7 @@ var render = function () {
               _c("v-text-field", {
                 attrs: {
                   outlined: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   filled: "",
                   label: "Class Name *",
                   autofocus: "",
@@ -917,7 +931,7 @@ var render = function () {
                 attrs: {
                   outlined: "",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   label: "Description",
                   rows: "2",
                   "auto-grow": "",
@@ -960,7 +974,7 @@ var render = function () {
             {
               attrs: {
                 text: "",
-                color: "teal",
+                color: _vm.$store.state.app.ThemeColor,
                 rounded: "",
                 loading: _vm.progress,
               },
@@ -1015,7 +1029,7 @@ var render = function () {
                 attrs: {
                   outlined: "",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   label: "Name*",
                   autofocus: "",
                   rules: _vm.$store.state.requiredRules,
@@ -1034,7 +1048,7 @@ var render = function () {
                   outlined: "",
                   filled: "",
                   label: "Description",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   "auto-grow": "",
                   rows: "2",
                 },
@@ -1074,7 +1088,11 @@ var render = function () {
           _c(
             "v-btn",
             {
-              attrs: { loading: _vm.progress, text: "", color: "teal" },
+              attrs: {
+                loading: _vm.progress,
+                text: "",
+                color: _vm.$store.state.app.ThemeColor,
+              },
               on: { click: _vm.save },
             },
             [_vm._v("Save")]
@@ -1113,7 +1131,14 @@ var render = function () {
     [
       _c(
         "v-col",
-        { staticClass: "teal lighten-5 teal--text", attrs: { cols: "12" } },
+        {
+          staticClass: "lighten-5",
+          class:
+            _vm.$store.state.app.ThemeColor +
+            "  " +
+            _vm.$store.state.app.ThemeText,
+          attrs: { cols: "12" },
+        },
         [
           _c(
             "v-row",
@@ -1125,7 +1150,11 @@ var render = function () {
                   _c(
                     "v-btn",
                     {
-                      attrs: { text: "", rounded: "", color: "teal" },
+                      attrs: {
+                        text: "",
+                        rounded: "",
+                        color: _vm.$store.state.app.ThemeColor,
+                      },
                       on: {
                         click: function ($event) {
                           return _vm.$router.back()
@@ -1149,27 +1178,29 @@ var render = function () {
                 "v-col",
                 { attrs: { cols: "2" } },
                 [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: {
-                        color: "teal",
-                        rounded: "",
-                        depressed: "",
-                        dark: "",
-                      },
-                      on: {
-                        click: function ($event) {
-                          return _vm.$emit("create", true)
+                  _vm.ShowAddBtn
+                    ? _c(
+                        "v-btn",
+                        {
+                          attrs: {
+                            color: _vm.$store.state.app.ThemeColor,
+                            rounded: "",
+                            depressed: "",
+                            dark: "",
+                          },
+                          on: {
+                            click: function ($event) {
+                              return _vm.$emit("create", true)
+                            },
+                          },
                         },
-                      },
-                    },
-                    [
-                      _vm._v(_vm._s(_vm.Btnlabel)),
-                      _c("v-icon", [_vm._v("mdi-plus")]),
-                    ],
-                    1
-                  ),
+                        [
+                          _vm._v(_vm._s(_vm.Btnlabel)),
+                          _c("v-icon", [_vm._v("mdi-plus")]),
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                 ],
                 1
               ),

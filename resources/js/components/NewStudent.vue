@@ -23,7 +23,7 @@
                             v-model="first_name"
                             outlined
                             filled
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="First Name*"
                             :rules="$store.state.requiredRules"
                             autofocus
@@ -35,7 +35,7 @@
                             v-model="last_name"
                             outlined
                             filled
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="Last Name*"
                             :rules="$store.state.requiredRules"
                         ></v-text-field>
@@ -46,7 +46,7 @@
                             v-model="other_names"
                             outlined
                             filled
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="Other Names"
                         ></v-text-field>
                     </v-col>
@@ -66,7 +66,7 @@
                                 <v-text-field
                                     outlined
                                     filled
-                                    color="teal"
+                                    :color="$store.state.app.ThemeColor"
                                     label="Date of birth*"
                                     v-on="on"
                                     v-bind="atttrs"
@@ -77,7 +77,7 @@
 
                             </template>
                             <v-date-picker
-                                color="teal"
+                                :color="$store.state.app.ThemeColor"
                                 no-title
                                 @input="dob_menu=false"
                                 v-model="dob"
@@ -93,8 +93,8 @@
                         <v-select
                             outlined
                             filled
-                            color="teal"
-                            item-color="teal"
+                            :color="$store.state.app.ThemeColor"
+                            :item-color="$store.state.app.ThemeColor"
                             label="Gender *"
                             :items="genders"
                             v-model="gender"
@@ -107,7 +107,7 @@
                             v-model="address"
                             outlined
                             filled
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="Residential Address"
                             rows="2"
                             auto-grow
@@ -123,7 +123,7 @@
                         <v-text-field
                             outlined
                             filled
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="Previous School"
                         ></v-text-field>
                     </v-col>
@@ -137,7 +137,7 @@
                         <v-select
                             outlined
                             filled
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="Residence Type*"
                             :items="ResidentialStatuses"
                             v-model="residential_status"
@@ -160,7 +160,7 @@
                                 <v-text-field
                                     outlined
                                     filled
-                                    color="teal"
+                                    :color="$store.state.app.ThemeColor"
                                     label="Date admitted*"
                                     v-on="on"
                                     v-bind="atttrs"
@@ -172,7 +172,7 @@
 
                             </template>
                             <v-date-picker
-                                color="teal"
+                                :color="$store.state.app.ThemeColor"
                                 no-title
                                 @input="date_menu=false"
                                 v-model="admission_date"
@@ -193,7 +193,7 @@
                             v-model="guardian_first_name"
                             outlined
                             filled
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="First Name*"
                             :rules="$store.state.requiredRules"
                         ></v-text-field>
@@ -204,7 +204,7 @@
                             v-model="guardian_last_name"
                             outlined
                             filled
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="Last Name*"
                             :rules="$store.state.requiredRules"
                         ></v-text-field>
@@ -216,7 +216,7 @@
                             outlined
                             filled
                             type="email"
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="Email"
 
                         ></v-text-field>
@@ -228,7 +228,7 @@
                             outlined
                             filled
                             type="tel"
-                            color="teal"
+                            :color="$store.state.app.ThemeColor"
                             label="Phone Number*"
                             :rules="$store.state.requiredRules"
                         ></v-text-field>
@@ -241,7 +241,7 @@
         <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn text rounded @click="$emit('closed')">Cancel</v-btn>
-            <v-btn text rounded color="teal" :loading="process" @click="save">Save</v-btn>
+            <v-btn text rounded :color="$store.state.app.ThemeColor" :loading="process" @click="save">Save</v-btn>
         </v-card-actions>
     </v-card>
 </template>

@@ -7,7 +7,7 @@
                 outlined
                 label="Name*"
                 filled
-                color="teal"
+                :color="$store.state.app.ThemeColor"
                 v-model="name"
                 autofocus
                 :rules="$store.state.requiredRules"
@@ -18,7 +18,7 @@
                 v-model="type"
                 label="Type*"
                 :items="types"
-                color="teal"
+                :color="$store.state.app.ThemeColor"
                 item-color="teal"
                 :rules="$store.state.requiredRules"
 
@@ -28,7 +28,7 @@
                 filled
                 outlined
                 label="Description"
-                color="teal"
+                :color="$store.state.app.ThemeColor"
                 v-model="description"
                 auto-grow
                 rows="2"
@@ -40,7 +40,7 @@
     <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn rounded @click="$emit('closed')" text :disabled="progress">cancel</v-btn>
-        <v-btn rounded text color="teal" @click="save" :loading="progress">Save</v-btn>
+        <v-btn rounded text :color="$store.state.app.ThemeColor" @click="save" :loading="progress">Save</v-btn>
     </v-card-actions>
 </v-card>
 </template>

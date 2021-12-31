@@ -19,12 +19,14 @@
                                         class="m-5"
                                     ></v-img>
                                     <h1
-                                        class="mt-5 teal--text font-weight-light"
+                                        :class="$store.state.ThemeText"
+                                        class="mt-5 font-weight-light"
                                     >Hello {{ $store.state.user.first_name }}</h1>
 
-                                    <h3 class="font-weight-light teal--text mt-5">Let's get you up and running</h3>
+                                    <h3 class="font-weight-light mt-5" :class="$store.state.ThemeText" >Let's get you up and running</h3>
                                     <h1
-                                        class="mt-5 teal--text font-weight-light"
+                                        :class="$store.state.ThemeText"
+                                        class="mt-5 font-weight-light"
                                     >Setup your Skuul to continue</h1>
 
                                 </center>
@@ -47,9 +49,9 @@
 
                                     <center>
 
-                                        <h3 class="font-weight-light teal--text">One more thing,
+                                        <h3 :class="$store.state.ThemeText" class="font-weight-light">One more thing,
                                             {{ $store.state.user.first_name }}</h3>
-                                        <h2 class="font-weight-light teal--text mb-5">Setup how you compute academic
+                                        <h2 :class="$store.state.ThemeText" class="font-weight-light mb-5">Setup how you compute academic
                                             records</h2>
 
                                     </center>
@@ -63,10 +65,10 @@
                                 <v-stepper-content step="3">
                                     <center>
                                         <h1 class="m-4 mt-15 font-weight-light teal--text">Congratulations🎉🎉🎉🎉🎉🎉</h1>
-                                        <h3 class="teal--text font-weight-light">You are all set to get started</h3>
+                                        <h3 :class="$store.state.ThemeText" class="font-weight-light">You are all set to get started</h3>
                                         <v-btn
                                             class="mt-5"
-                                            color="teal"
+                                            :color="$store.state.app.ThemeColor"
                                             rounded
                                             text
                                             block

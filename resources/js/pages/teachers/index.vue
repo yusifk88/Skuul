@@ -9,26 +9,14 @@
 
     <v-row>
         <v-col cols="12" sm="10" class="mx-auto">
-            <v-list>
-                <v-list-item
+            <v-skeleton-loader type="list-item@10" v-if="progress"></v-skeleton-loader>
+            <v-list v-else>
+                <teacher-item-component
                     v-for="teacher in teachers"
                     :key="teacher.id"
-                    two-line
-                >
-                    <v-list-item-content>
-                        <v-list-item-title>{{teacher.first_name}} {{teacher.last_name}} {{teacher.other_names}}</v-list-item-title>
-                        <v-list-item-subtitle>
-                            <strong>Phone Number: </strong>{{teacher.phone_number}}
-                            <strong>Gender: </strong>{{teacher.gender==='F' ? 'Female' : 'Male'}}
-
-                           <span v-if="teacher.rank">
-                            <strong>Rank: </strong>{{teacher.rank}}
-
-                           </span>
-                        </v-list-item-subtitle>
-                    </v-list-item-content>
-
-                </v-list-item>
+                    :teacher="teacher"
+                    @updated="getTeachers"
+                ></teacher-item-component>
             </v-list>
         </v-col>
     </v-row>
@@ -54,10 +42,11 @@
 <script>
 import TitleBarComponent from "../../components/TitleBarComponent";
 import NewTeacher from "../../components/NewTeacher";
+import TeacherItemComponent from "../../components/TeacherItemComponent";
 
 export default {
     name: "index",
-    components: {NewTeacher, TitleBarComponent},
+    components: {TeacherItemComponent, NewTeacher, TitleBarComponent},
     data() {
         return {
 

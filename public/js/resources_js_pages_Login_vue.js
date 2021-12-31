@@ -146,7 +146,7 @@ var render = function () {
           outlined: "",
           filled: "",
           label: "E-mail",
-          color: "teal",
+          color: _vm.$store.state.app.ThemeColor,
         },
       }),
       _vm._v(" "),
@@ -156,7 +156,7 @@ var render = function () {
           outlined: "",
           filled: "",
           label: "Password",
-          color: "teal",
+          color: _vm.$store.state.app.ThemeColor,
         },
       }),
       _vm._v(" "),
@@ -164,7 +164,7 @@ var render = function () {
         "v-btn",
         {
           attrs: {
-            color: "teal",
+            color: _vm.$store.state.app.ThemeColor,
             block: "",
             rounded: "",
             large: "",

@@ -10,11 +10,16 @@
         <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}" defer></script>
 
+        <style>
+            .border-bottom{
+                border-bottom: 1px solid rgba(128,128,128,0.17)
+            }
+        </style>
     </head>
-    <body class="grey">
+    <body>
     <!-- App.vue -->
 
-    <v-app id="app" class="grey">
+    <v-app id="app" >
 <nav-drawer
     :show-mini-variant="showMiniVariant"
     v-if="$route.path!='/auth/login' && $route.path!='/auth/signup' "
@@ -24,14 +29,14 @@
             flat
             v-if="$route.path!='/auth/login' && $route.path!='/auth/signup'"
         >
-            <v-app-bar-nav-icon color="teal" @click="changeNavVariant()"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon :color="$store.state.app.ThemeColor" @click="changeNavVariant()"></v-app-bar-nav-icon>
 
-            <v-toolbar-title class="teal--text font-weight-black">Skuul</v-toolbar-title>
+            <v-toolbar-title :class="$store.state.app.ThemeText" class="font-weight-black">Skuul</v-toolbar-title>
 
             <v-spacer></v-spacer>
 
 
-            <v-btn icon color="teal">
+            <v-btn icon :color="$store.state.app.ThemeColor">
                 <v-icon>mdi-magnify</v-icon>
             </v-btn>
 
@@ -70,7 +75,7 @@
         </v-app-bar>
 
         <!-- Sizes your content based upon application components -->
-        <v-main class="grey lighten-5">
+        <v-main :class="$vuetify.theme.isDark ? '' : 'grey lighten-5'">
 
             <!-- Provides the application the proper gutter -->
             <v-container fluid>

@@ -152,9 +152,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "TitleBarComponent",
-  props: ['title', 'AddLabel', 'BtnIcon'],
+  props: {
+    title: {},
+    AddLabel: {},
+    BtnIcon: {},
+    ShowAddBtn: {
+      "default": true,
+      type: Boolean
+    }
+  },
   computed: {
     MainTitle: function MainTitle() {
       return this.title ? this.title : this.$route.name;
@@ -508,7 +521,7 @@ var render = function () {
                   outlined: "",
                   label: "Name*",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   autofocus: "",
                   rules: _vm.$store.state.requiredRules,
                 },
@@ -527,7 +540,7 @@ var render = function () {
                   filled: "",
                   label: "Type*",
                   items: _vm.types,
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   "item-color": "teal",
                   rules: _vm.$store.state.requiredRules,
                 },
@@ -545,7 +558,7 @@ var render = function () {
                   filled: "",
                   outlined: "",
                   label: "Description",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   "auto-grow": "",
                   rows: "2",
                 },
@@ -588,7 +601,7 @@ var render = function () {
               attrs: {
                 rounded: "",
                 text: "",
-                color: "teal",
+                color: _vm.$store.state.app.ThemeColor,
                 loading: _vm.progress,
               },
               on: { click: _vm.save },
@@ -629,7 +642,14 @@ var render = function () {
     [
       _c(
         "v-col",
-        { staticClass: "teal lighten-5 teal--text", attrs: { cols: "12" } },
+        {
+          staticClass: "lighten-5",
+          class:
+            _vm.$store.state.app.ThemeColor +
+            "  " +
+            _vm.$store.state.app.ThemeText,
+          attrs: { cols: "12" },
+        },
         [
           _c(
             "v-row",
@@ -641,7 +661,11 @@ var render = function () {
                   _c(
                     "v-btn",
                     {
-                      attrs: { text: "", rounded: "", color: "teal" },
+                      attrs: {
+                        text: "",
+                        rounded: "",
+                        color: _vm.$store.state.app.ThemeColor,
+                      },
                       on: {
                         click: function ($event) {
                           return _vm.$router.back()
@@ -665,27 +689,29 @@ var render = function () {
                 "v-col",
                 { attrs: { cols: "2" } },
                 [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: {
-                        color: "teal",
-                        rounded: "",
-                        depressed: "",
-                        dark: "",
-                      },
-                      on: {
-                        click: function ($event) {
-                          return _vm.$emit("create", true)
+                  _vm.ShowAddBtn
+                    ? _c(
+                        "v-btn",
+                        {
+                          attrs: {
+                            color: _vm.$store.state.app.ThemeColor,
+                            rounded: "",
+                            depressed: "",
+                            dark: "",
+                          },
+                          on: {
+                            click: function ($event) {
+                              return _vm.$emit("create", true)
+                            },
+                          },
                         },
-                      },
-                    },
-                    [
-                      _vm._v(_vm._s(_vm.Btnlabel)),
-                      _c("v-icon", [_vm._v("mdi-plus")]),
-                    ],
-                    1
-                  ),
+                        [
+                          _vm._v(_vm._s(_vm.Btnlabel)),
+                          _c("v-icon", [_vm._v("mdi-plus")]),
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                 ],
                 1
               ),

@@ -210,6 +210,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewClass",
@@ -894,9 +895,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "TitleBarComponent",
-  props: ['title', 'AddLabel', 'BtnIcon'],
+  props: {
+    title: {},
+    AddLabel: {},
+    BtnIcon: {},
+    ShowAddBtn: {
+      "default": true,
+      type: Boolean
+    }
+  },
   computed: {
     MainTitle: function MainTitle() {
       return this.title ? this.title : this.$route.name;
@@ -1638,7 +1652,7 @@ var render = function () {
   return _c("v-autocomplete", {
     attrs: {
       outlined: "",
-      color: "teal",
+      color: _vm.$store.state.app.ThemeColor,
       filled: "",
       label: "Class",
       rules: _vm.$store.state.requiredRules,
@@ -1747,7 +1761,7 @@ var render = function () {
       "item-text": "name",
       "item-value": "id",
       filled: "",
-      color: "teal",
+      color: _vm.$store.state.app.ThemeColor,
       rules: _vm.$store.state.requiredRules,
       outlined: "",
       label: "Grade",
@@ -1853,7 +1867,7 @@ var render = function () {
               _c("v-text-field", {
                 attrs: {
                   outlined: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   filled: "",
                   label: "Class Name *",
                   autofocus: "",
@@ -1880,7 +1894,7 @@ var render = function () {
                 attrs: {
                   outlined: "",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   label: "Description",
                   rows: "2",
                   "auto-grow": "",
@@ -1923,7 +1937,7 @@ var render = function () {
             {
               attrs: {
                 text: "",
-                color: "teal",
+                color: _vm.$store.state.app.ThemeColor,
                 rounded: "",
                 loading: _vm.progress,
               },
@@ -1978,7 +1992,7 @@ var render = function () {
                 attrs: {
                   outlined: "",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   label: "Name*",
                   autofocus: "",
                   rules: _vm.$store.state.requiredRules,
@@ -1997,7 +2011,7 @@ var render = function () {
                   outlined: "",
                   filled: "",
                   label: "Description",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   "auto-grow": "",
                   rows: "2",
                 },
@@ -2037,7 +2051,11 @@ var render = function () {
           _c(
             "v-btn",
             {
-              attrs: { loading: _vm.progress, text: "", color: "teal" },
+              attrs: {
+                loading: _vm.progress,
+                text: "",
+                color: _vm.$store.state.app.ThemeColor,
+              },
               on: { click: _vm.save },
             },
             [_vm._v("Save")]
@@ -2128,7 +2146,7 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "First Name*",
                           rules: _vm.$store.state.requiredRules,
                           autofocus: "",
@@ -2153,7 +2171,7 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "Last Name*",
                           rules: _vm.$store.state.requiredRules,
                         },
@@ -2177,7 +2195,7 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "Other Names",
                         },
                         model: {
@@ -2221,7 +2239,8 @@ var render = function () {
                                           attrs: {
                                             outlined: "",
                                             filled: "",
-                                            color: "teal",
+                                            color:
+                                              _vm.$store.state.app.ThemeColor,
                                             label: "Date of birth*",
                                             readonly: "",
                                             rules:
@@ -2257,7 +2276,10 @@ var render = function () {
                         [
                           _vm._v(" "),
                           _c("v-date-picker", {
-                            attrs: { color: "teal", "no-title": "" },
+                            attrs: {
+                              color: _vm.$store.state.app.ThemeColor,
+                              "no-title": "",
+                            },
                             on: {
                               input: function ($event) {
                                 _vm.dob_menu = false
@@ -2286,8 +2308,8 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
-                          "item-color": "teal",
+                          color: _vm.$store.state.app.ThemeColor,
+                          "item-color": _vm.$store.state.app.ThemeColor,
                           label: "Gender *",
                           items: _vm.genders,
                           rules: _vm.$store.state.requiredRules,
@@ -2312,7 +2334,7 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "Residential Address",
                           rows: "2",
                           "auto-grow": "",
@@ -2344,7 +2366,7 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "Previous School",
                         },
                       }),
@@ -2375,7 +2397,7 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "Residence Type*",
                           items: _vm.ResidentialStatuses,
                           rules: _vm.$store.state.requiredRules,
@@ -2422,7 +2444,8 @@ var render = function () {
                                           attrs: {
                                             outlined: "",
                                             filled: "",
-                                            color: "teal",
+                                            color:
+                                              _vm.$store.state.app.ThemeColor,
                                             label: "Date admitted*",
                                             readonly: "",
                                             rules:
@@ -2463,7 +2486,10 @@ var render = function () {
                         [
                           _vm._v(" "),
                           _c("v-date-picker", {
-                            attrs: { color: "teal", "no-title": "" },
+                            attrs: {
+                              color: _vm.$store.state.app.ThemeColor,
+                              "no-title": "",
+                            },
                             on: {
                               input: function ($event) {
                                 _vm.date_menu = false
@@ -2499,7 +2525,7 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "First Name*",
                           rules: _vm.$store.state.requiredRules,
                         },
@@ -2523,7 +2549,7 @@ var render = function () {
                         attrs: {
                           outlined: "",
                           filled: "",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "Last Name*",
                           rules: _vm.$store.state.requiredRules,
                         },
@@ -2548,7 +2574,7 @@ var render = function () {
                           outlined: "",
                           filled: "",
                           type: "email",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "Email",
                         },
                         model: {
@@ -2572,7 +2598,7 @@ var render = function () {
                           outlined: "",
                           filled: "",
                           type: "tel",
-                          color: "teal",
+                          color: _vm.$store.state.app.ThemeColor,
                           label: "Phone Number*",
                           rules: _vm.$store.state.requiredRules,
                         },
@@ -2621,7 +2647,7 @@ var render = function () {
               attrs: {
                 text: "",
                 rounded: "",
-                color: "teal",
+                color: _vm.$store.state.app.ThemeColor,
                 loading: _vm.process,
               },
               on: { click: _vm.save },
@@ -2659,10 +2685,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "v-list-item",
-    {
-      staticStyle: { "border-bottom": "1px solid rgba(128,128,128,0.07)" },
-      attrs: { link: "", "two-line": "" },
-    },
+    { staticClass: "border-bottom", attrs: { link: "", "three-line": "" } },
     [
       _c(
         "v-list-item-avatar",
@@ -2682,7 +2705,7 @@ var render = function () {
                   staticClass: "pa-0",
                   attrs: {
                     text: "",
-                    color: "teal",
+                    color: _vm.$store.state.app.ThemeColor,
                     rounded: "",
                     to: "/students/" + _vm.student.id,
                   },
@@ -2826,7 +2849,7 @@ var render = function () {
                         icon: "",
                         large: "",
                         depressed: "",
-                        color: "teal",
+                        color: _vm.$store.state.app.ThemeColor,
                       },
                     },
                     "v-btn",
@@ -2923,7 +2946,14 @@ var render = function () {
     [
       _c(
         "v-col",
-        { staticClass: "teal lighten-5 teal--text", attrs: { cols: "12" } },
+        {
+          staticClass: "lighten-5",
+          class:
+            _vm.$store.state.app.ThemeColor +
+            "  " +
+            _vm.$store.state.app.ThemeText,
+          attrs: { cols: "12" },
+        },
         [
           _c(
             "v-row",
@@ -2935,7 +2965,11 @@ var render = function () {
                   _c(
                     "v-btn",
                     {
-                      attrs: { text: "", rounded: "", color: "teal" },
+                      attrs: {
+                        text: "",
+                        rounded: "",
+                        color: _vm.$store.state.app.ThemeColor,
+                      },
                       on: {
                         click: function ($event) {
                           return _vm.$router.back()
@@ -2959,27 +2993,29 @@ var render = function () {
                 "v-col",
                 { attrs: { cols: "2" } },
                 [
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: {
-                        color: "teal",
-                        rounded: "",
-                        depressed: "",
-                        dark: "",
-                      },
-                      on: {
-                        click: function ($event) {
-                          return _vm.$emit("create", true)
+                  _vm.ShowAddBtn
+                    ? _c(
+                        "v-btn",
+                        {
+                          attrs: {
+                            color: _vm.$store.state.app.ThemeColor,
+                            rounded: "",
+                            depressed: "",
+                            dark: "",
+                          },
+                          on: {
+                            click: function ($event) {
+                              return _vm.$emit("create", true)
+                            },
+                          },
                         },
-                      },
-                    },
-                    [
-                      _vm._v(_vm._s(_vm.Btnlabel)),
-                      _c("v-icon", [_vm._v("mdi-plus")]),
-                    ],
-                    1
-                  ),
+                        [
+                          _vm._v(_vm._s(_vm.Btnlabel)),
+                          _c("v-icon", [_vm._v("mdi-plus")]),
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                 ],
                 1
               ),

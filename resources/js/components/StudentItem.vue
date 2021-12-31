@@ -2,8 +2,8 @@
     <v-list-item
 
         link
-        two-line
-        style="border-bottom: 1px solid rgba(128,128,128,0.07)"
+        three-line
+       class="border-bottom"
 
     >
         <v-list-item-avatar>
@@ -14,7 +14,7 @@
         <v-list-item-content>
             <v-list-item-title>
 
-                <v-btn text color="teal" rounded class="pa-0" :to="'/students/'+student.id">
+                <v-btn text :color="$store.state.app.ThemeColor" rounded class="pa-0" :to="'/students/'+student.id">
                 {{student.first_name}} {{student.last_name}} {{student.other_names}}
                 </v-btn>
                 <v-chip x-small color="green lighten-5 green--text"

@@ -105,6 +105,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Authentication",
@@ -364,8 +367,8 @@ var render = function () {
                               _c(
                                 "h1",
                                 {
-                                  staticClass:
-                                    "mt-5 teal--text font-weight-light",
+                                  staticClass: "mt-5 font-weight-light",
+                                  class: _vm.$store.state.app.ThemeText,
                                 },
                                 [
                                   _vm._v(
@@ -377,7 +380,10 @@ var render = function () {
                               _vm._v(" "),
                               _c(
                                 "h3",
-                                { staticClass: "teal--text font-weight-light" },
+                                {
+                                  staticClass: "font-weight-light",
+                                  class: _vm.$store.state.app.ThemeText,
+                                },
                                 [
                                   _vm._v(
                                     "\n                            All your students/administration information and more  in the cloud...\n                        "
@@ -405,7 +411,8 @@ var render = function () {
                                             attrs: {
                                               to: "/auth/login",
                                               text: "",
-                                              color: "teal",
+                                              color:
+                                                _vm.$store.state.app.ThemeColor,
                                               small: "",
                                             },
                                           },
@@ -429,7 +436,8 @@ var render = function () {
                                             attrs: {
                                               to: "/auth/signup",
                                               text: "",
-                                              color: "teal",
+                                              color:
+                                                _vm.$store.state.app.ThemeColor,
                                               small: "",
                                             },
                                           },

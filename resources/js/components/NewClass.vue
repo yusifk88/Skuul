@@ -6,7 +6,7 @@
                 <v-text-field
                     v-model="name"
                     outlined
-                    color="teal"
+                    :color="$store.state.app.ThemeColor"
                     filled
                     label="Class Name *"
                     autofocus
@@ -21,10 +21,11 @@
                     v-model="description"
                     outlined
                     filled
-                    color="teal"
+                    :color="$store.state.app.ThemeColor"
                     label="Description"
                     rows="2"
                     auto-grow
+
                 >
 
                 </v-textarea>
@@ -33,7 +34,7 @@
         <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn text @click="$emit('closed')">Cancel</v-btn>
-            <v-btn text color="teal" rounded @click="save" :loading="progress">Save</v-btn>
+            <v-btn text :color="$store.state.app.ThemeColor" rounded @click="save" :loading="progress">Save</v-btn>
         </v-card-actions>
     </v-card>
 </template>

@@ -6,7 +6,7 @@
                 icon
                 large
                 depressed
-                color="teal"
+                :color="$store.state.app.ThemeColor"
                 v-on="on"
                 v-bind="attr"
             >

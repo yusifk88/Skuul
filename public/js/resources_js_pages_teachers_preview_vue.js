@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_teachers_index_vue"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_teachers_preview_vue"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/NewTeacher.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
@@ -385,76 +385,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherItemComponent.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherItemComponent.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _TeacherMenuComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TeacherMenuComponent */ "./resources/js/components/TeacherMenuComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    TeacherMenuComponent: _TeacherMenuComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
-  props: ['teacher'],
-  name: "TeacherItemComponent",
-  methods: {
-    updated: function updated(teacher) {
-      this.$emit('updated', teacher);
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherMenuComponent.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherMenuComponent.vue?vue&type=script&lang=js& ***!
@@ -620,10 +550,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/index.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/index.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/preview.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/preview.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -631,8 +561,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_TitleBarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/TitleBarComponent */ "./resources/js/components/TitleBarComponent.vue");
-/* harmony import */ var _components_NewTeacher__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/NewTeacher */ "./resources/js/components/NewTeacher.vue");
-/* harmony import */ var _components_TeacherItemComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/TeacherItemComponent */ "./resources/js/components/TeacherItemComponent.vue");
+/* harmony import */ var _components_TeacherMenuComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/TeacherMenuComponent */ "./resources/js/components/TeacherMenuComponent.vue");
 //
 //
 //
@@ -674,38 +603,309 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "index",
+  name: "preview",
   components: {
-    TeacherItemComponent: _components_TeacherItemComponent__WEBPACK_IMPORTED_MODULE_2__["default"],
-    NewTeacher: _components_NewTeacher__WEBPACK_IMPORTED_MODULE_1__["default"],
+    TeacherMenuComponent: _components_TeacherMenuComponent__WEBPACK_IMPORTED_MODULE_1__["default"],
     TitleBarComponent: _components_TitleBarComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
-      NewTeacher: false,
-      teachers: [],
-      progress: false
+      teacher: null,
+      progress: false,
+      tab: 'classes-tab'
     };
   },
-  mounted: function mounted() {
-    this.getTeachers();
-  },
-  methods: {
-    getTeachers: function getTeachers() {
+  computed: {
+    rank_name: function rank_name() {
       var _this = this;
 
+      var rank = this.$store.state.ranks.find(function (rank) {
+        return rank.value === _this.teacher.rank;
+      });
+      return rank ? rank.text : "";
+    },
+    TeacherID: function TeacherID() {
+      return this.$route.params.id;
+    },
+    TeacherName: function TeacherName() {
+      return this.teacher ? this.teacher.first_name + " " + this.teacher.last_name : null;
+    }
+  },
+  watch: {
+    TeacherID: function TeacherID() {
+      this.GetTeacher();
+    }
+  },
+  methods: {
+    GetTeacher: function GetTeacher() {
+      var _this2 = this;
+
       this.progress = true;
-      axios.get('/teachers').then(function (res) {
-        _this.teachers = res.data.data;
-        _this.progress = false;
+      axios.get('/teacher/' + this.TeacherID).then(function (res) {
+        _this2.teacher = res.data.data;
+        _this2.progress = false;
       })["catch"](function (error) {
-        _this.progress = false;
+        _this2.progress = false;
       });
     }
+  },
+  mounted: function mounted() {
+    this.GetTeacher();
   }
 });
 
@@ -745,44 +945,6 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 /* hot reload */
 if (false) { var api; }
 component.options.__file = "resources/js/components/NewTeacher.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/TeacherItemComponent.vue":
-/*!**********************************************************!*\
-  !*** ./resources/js/components/TeacherItemComponent.vue ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _TeacherItemComponent_vue_vue_type_template_id_0ee0715a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TeacherItemComponent.vue?vue&type=template&id=0ee0715a&scoped=true& */ "./resources/js/components/TeacherItemComponent.vue?vue&type=template&id=0ee0715a&scoped=true&");
-/* harmony import */ var _TeacherItemComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TeacherItemComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/TeacherItemComponent.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _TeacherItemComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TeacherItemComponent_vue_vue_type_template_id_0ee0715a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
-  _TeacherItemComponent_vue_vue_type_template_id_0ee0715a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  "0ee0715a",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/TeacherItemComponent.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -863,18 +1025,18 @@ component.options.__file = "resources/js/components/TitleBarComponent.vue"
 
 /***/ }),
 
-/***/ "./resources/js/pages/teachers/index.vue":
-/*!***********************************************!*\
-  !*** ./resources/js/pages/teachers/index.vue ***!
-  \***********************************************/
+/***/ "./resources/js/pages/teachers/preview.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/pages/teachers/preview.vue ***!
+  \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _index_vue_vue_type_template_id_88a6ac86_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.vue?vue&type=template&id=88a6ac86&scoped=true& */ "./resources/js/pages/teachers/index.vue?vue&type=template&id=88a6ac86&scoped=true&");
-/* harmony import */ var _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.vue?vue&type=script&lang=js& */ "./resources/js/pages/teachers/index.vue?vue&type=script&lang=js&");
+/* harmony import */ var _preview_vue_vue_type_template_id_251370f3_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./preview.vue?vue&type=template&id=251370f3&scoped=true& */ "./resources/js/pages/teachers/preview.vue?vue&type=template&id=251370f3&scoped=true&");
+/* harmony import */ var _preview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./preview.vue?vue&type=script&lang=js& */ "./resources/js/pages/teachers/preview.vue?vue&type=script&lang=js&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -884,19 +1046,19 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _index_vue_vue_type_template_id_88a6ac86_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
-  _index_vue_vue_type_template_id_88a6ac86_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _preview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _preview_vue_vue_type_template_id_251370f3_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _preview_vue_vue_type_template_id_251370f3_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
-  "88a6ac86",
+  "251370f3",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/teachers/index.vue"
+component.options.__file = "resources/js/pages/teachers/preview.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
@@ -913,21 +1075,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NewTeacher_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./NewTeacher.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/NewTeacher.vue?vue&type=script&lang=js&");
  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NewTeacher_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/TeacherItemComponent.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/components/TeacherItemComponent.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherItemComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TeacherItemComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherItemComponent.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherItemComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -961,18 +1108,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/teachers/index.vue?vue&type=script&lang=js&":
-/*!************************************************************************!*\
-  !*** ./resources/js/pages/teachers/index.vue?vue&type=script&lang=js& ***!
-  \************************************************************************/
+/***/ "./resources/js/pages/teachers/preview.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/pages/teachers/preview.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/index.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_preview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./preview.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/preview.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_preview_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -988,22 +1135,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewTeacher_vue_vue_type_template_id_0c8a71cd_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NewTeacher_vue_vue_type_template_id_0c8a71cd_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./NewTeacher.vue?vue&type=template&id=0c8a71cd&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/NewTeacher.vue?vue&type=template&id=0c8a71cd&scoped=true&");
-
-
-/***/ }),
-
-/***/ "./resources/js/components/TeacherItemComponent.vue?vue&type=template&id=0ee0715a&scoped=true&":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/js/components/TeacherItemComponent.vue?vue&type=template&id=0ee0715a&scoped=true& ***!
-  \*****************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherItemComponent_vue_vue_type_template_id_0ee0715a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherItemComponent_vue_vue_type_template_id_0ee0715a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TeacherItemComponent_vue_vue_type_template_id_0ee0715a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./TeacherItemComponent.vue?vue&type=template&id=0ee0715a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherItemComponent.vue?vue&type=template&id=0ee0715a&scoped=true&");
 
 
 /***/ }),
@@ -1040,18 +1171,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/teachers/index.vue?vue&type=template&id=88a6ac86&scoped=true&":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/pages/teachers/index.vue?vue&type=template&id=88a6ac86&scoped=true& ***!
-  \******************************************************************************************/
+/***/ "./resources/js/pages/teachers/preview.vue?vue&type=template&id=251370f3&scoped=true&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/pages/teachers/preview.vue?vue&type=template&id=251370f3&scoped=true& ***!
+  \********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_88a6ac86_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_88a6ac86_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_preview_vue_vue_type_template_id_251370f3_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_preview_vue_vue_type_template_id_251370f3_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_template_id_88a6ac86_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./index.vue?vue&type=template&id=88a6ac86&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/index.vue?vue&type=template&id=88a6ac86&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_preview_vue_vue_type_template_id_251370f3_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./preview.vue?vue&type=template&id=251370f3&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/preview.vue?vue&type=template&id=251370f3&scoped=true&");
 
 
 /***/ }),
@@ -1702,105 +1833,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherItemComponent.vue?vue&type=template&id=0ee0715a&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherItemComponent.vue?vue&type=template&id=0ee0715a&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "v-list-item",
-    { staticClass: "border-bottom", attrs: { "three-line": "", link: "" } },
-    [
-      _c(
-        "v-list-item-avatar",
-        [_c("v-img", { attrs: { src: "/img/photo.png" } })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-list-item-content",
-        [
-          _c(
-            "v-list-item-title",
-            [
-              _c(
-                "v-btn",
-                {
-                  staticClass: "pa-0",
-                  attrs: {
-                    to: "/teachers/" + _vm.teacher.id,
-                    text: "",
-                    color: _vm.$store.state.app.ThemeColor,
-                  },
-                },
-                [
-                  _vm._v(
-                    "\n            " +
-                      _vm._s(_vm.teacher.first_name) +
-                      " " +
-                      _vm._s(_vm.teacher.last_name) +
-                      " " +
-                      _vm._s(_vm.teacher.other_names) +
-                      "\n\n        "
-                  ),
-                ]
-              ),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("v-list-item-subtitle", [
-            _c("strong", [_vm._v("Phone Number: ")]),
-            _vm._v(_vm._s(_vm.teacher.phone_number) + "\n            "),
-            _c("strong", [_vm._v("Gender: ")]),
-            _vm._v(
-              _vm._s(_vm.teacher.gender === "F" ? "Female" : "Male") +
-                "\n\n            "
-            ),
-            _vm.teacher.rank
-              ? _c("span", [
-                  _c("strong", [_vm._v("Rank: ")]),
-                  _vm._v(
-                    _vm._s(_vm.teacher.rank) + "\n\n                       "
-                  ),
-                ])
-              : _vm._e(),
-          ]),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-list-item-action",
-        [
-          _c("teacher-menu-component", {
-            attrs: { teacher: _vm.teacher },
-            on: { updated: _vm.updated },
-          }),
-        ],
-        1
-      ),
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherMenuComponent.vue?vue&type=template&id=3b504887&scoped=true&":
 /*!********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/TeacherMenuComponent.vue?vue&type=template&id=3b504887&scoped=true& ***!
@@ -2052,10 +2084,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/index.vue?vue&type=template&id=88a6ac86&scoped=true&":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/index.vue?vue&type=template&id=88a6ac86&scoped=true& ***!
-  \*********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/preview.vue?vue&type=template&id=251370f3&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/pages/teachers/preview.vue?vue&type=template&id=251370f3&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -2071,66 +2103,918 @@ var render = function () {
     "span",
     [
       _c("title-bar-component", {
-        attrs: { "add-label": "Create new teacher" },
-        on: {
-          create: function (b) {
-            return (_vm.NewTeacher = b)
-          },
+        attrs: {
+          title: "Teacher Infor: " + _vm.TeacherName,
+          "show-add-btn": false,
         },
       }),
       _vm._v(" "),
       _c(
         "v-row",
+        { attrs: { dense: "" } },
         [
           _c(
             "v-col",
-            { staticClass: "mx-auto", attrs: { cols: "12", sm: "10" } },
+            { staticClass: "mx-auto", attrs: { cols: "12", sm: "8" } },
             [
               _vm.progress
-                ? _c("v-skeleton-loader", { attrs: { type: "list-item@10" } })
+                ? _c("v-skeleton-loader", { attrs: { type: "card" } })
                 : _c(
-                    "v-list",
-                    _vm._l(_vm.teachers, function (teacher) {
-                      return _c("teacher-item-component", {
-                        key: teacher.id,
-                        attrs: { teacher: teacher },
-                        on: { updated: _vm.getTeachers },
-                      })
-                    }),
+                    "v-card",
+                    { attrs: { flat: "" } },
+                    [
+                      _c(
+                        "v-card-title",
+                        { staticClass: "border-bottom" },
+                        [
+                          _c(
+                            "h1",
+                            { staticClass: "font-weight-light" },
+                            [
+                              _c(
+                                "v-avatar",
+                                [
+                                  _c("v-img", {
+                                    attrs: { src: "/img/photo.png" },
+                                  }),
+                                ],
+                                1
+                              ),
+                              _vm._v(
+                                " " + _vm._s(_vm.TeacherName) + "\n            "
+                              ),
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-spacer"),
+                          _vm._v(" "),
+                          _vm.teacher
+                            ? _c("teacher-menu-component", {
+                                attrs: { teacher: _vm.teacher },
+                                on: { updated: _vm.GetTeacher },
+                              })
+                            : _vm._e(),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _vm.teacher
+                        ? _c(
+                            "v-card-text",
+                            [
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12", sm: "4" } },
+                                    [
+                                      _c(
+                                        "v-list",
+                                        [
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.teacher.gender ===
+                                                            "F"
+                                                            ? "Female"
+                                                            : "Male"
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Gender")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.teacher
+                                                            .phone_number
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Phone Number")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm.teacher.dob
+                                                        ? [
+                                                            _vm._v(
+                                                              "\n\n                            " +
+                                                                _vm._s(
+                                                                  _vm._f(
+                                                                    "human_date"
+                                                                  )(
+                                                                    _vm.teacher
+                                                                      .dob
+                                                                  )
+                                                                ) +
+                                                                "\n                        "
+                                                            ),
+                                                          ]
+                                                        : [
+                                                            _vm._v(
+                                                              "\n                                N/A\n                            "
+                                                            ),
+                                                          ],
+                                                    ],
+                                                    2
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Date of Birth")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.teacher.id_number
+                                                            ? _vm.teacher
+                                                                .id_number
+                                                            : "N/A"
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "ID Number(Notional ID,Voter ID, ETC)"
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.teacher.email
+                                                            ? _vm.teacher.email
+                                                            : "N/A"
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Email")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12", sm: "4" } },
+                                    [
+                                      _c(
+                                        "v-list",
+                                        [
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.teacher
+                                                            .staff_number
+                                                            ? _vm.teacher
+                                                                .staff_number
+                                                            : "N/A"
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Staff Number")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.teacher
+                                                            .academic_qualification
+                                                            ? _vm.teacher
+                                                                .academic_qualification
+                                                            : "N/A"
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "Academic Qualification"
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                            " +
+                                                          _vm._s(
+                                                            _vm.teacher
+                                                              .professional_qualification
+                                                              ? _vm.teacher
+                                                                  .professional_qualification
+                                                              : "N/A"
+                                                          ) +
+                                                          "\n                        "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Date of Birth")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm.teacher
+                                                        .appointment_date
+                                                        ? [
+                                                            _vm._v(
+                                                              "\n                                                           " +
+                                                                _vm._s(
+                                                                  _vm._f(
+                                                                    "human_date"
+                                                                  )(
+                                                                    _vm.teacher
+                                                                      .appointment_date
+                                                                  )
+                                                                ) +
+                                                                "\n\n                            "
+                                                            ),
+                                                          ]
+                                                        : [
+                                                            _vm._v(
+                                                              "\n                                N/A\n                            "
+                                                            ),
+                                                          ],
+                                                    ],
+                                                    2
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Date Appointed")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm.teacher.date_assumed
+                                                        ? [
+                                                            _vm._v(
+                                                              "\n                                                           " +
+                                                                _vm._s(
+                                                                  _vm._f(
+                                                                    "human_date"
+                                                                  )(
+                                                                    _vm.teacher
+                                                                      .date_assumed
+                                                                  )
+                                                                ) +
+                                                                "\n\n                            "
+                                                            ),
+                                                          ]
+                                                        : [
+                                                            _vm._v(
+                                                              "\n                                N/A\n                            "
+                                                            ),
+                                                          ],
+                                                    ],
+                                                    2
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Assumed Post On")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12", sm: "4" } },
+                                    [
+                                      _c(
+                                        "v-list",
+                                        [
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.teacher
+                                                            .academic_qualification
+                                                            ? _vm.teacher
+                                                                .academic_qualification
+                                                            : "N/A"
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "Academic Qualification"
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.teacher
+                                                            .professional_qualification
+                                                            ? _vm.teacher
+                                                                .professional_qualification
+                                                            : "N/A"
+                                                        )
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "Professional Qualification"
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n                            " +
+                                                          _vm._s(
+                                                            _vm.rank_name
+                                                              ? _vm.rank_name
+                                                              : "N/A"
+                                                          ) +
+                                                          "\n                        "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Rank")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n\n                            " +
+                                                          _vm._s(
+                                                            _vm.teacher
+                                                              .bank_name
+                                                              ? _vm.teacher
+                                                                  .bank_name
+                                                              : "N/A"
+                                                          ) +
+                                                          "\n\n                        "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Bank Name")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            [
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c(
+                                                    "v-list-item-title",
+                                                    {
+                                                      staticClass:
+                                                        "font-weight-black",
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        "\n\n\n                           " +
+                                                          _vm._s(
+                                                            _vm.teacher
+                                                              .bank_account_number
+                                                              ? _vm.teacher
+                                                                  .bank_account_number
+                                                              : "N/A"
+                                                          ) +
+                                                          "\n                        "
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-subtitle",
+                                                    {
+                                                      staticClass:
+                                                        "text--disabled",
+                                                    },
+                                                    [_vm._v("Account Number")]
+                                                  ),
+                                                ],
+                                                1
+                                              ),
+                                            ],
+                                            1
+                                          ),
+                                        ],
+                                        1
+                                      ),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                    ],
                     1
                   ),
             ],
             1
           ),
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: {
-            width: "40%",
-            fullscreen: _vm.$vuetify.breakpoint.mobile,
-            persistent: "",
-            scrollable: "",
-          },
-          model: {
-            value: _vm.NewTeacher,
-            callback: function ($$v) {
-              _vm.NewTeacher = $$v
-            },
-            expression: "NewTeacher",
-          },
-        },
-        [
-          _c("new-teacher", {
-            on: {
-              closed: function ($event) {
-                _vm.NewTeacher = false
-              },
-            },
-          }),
+          _vm._v(" "),
+          _c(
+            "v-col",
+            { staticClass: "mx-auto", attrs: { cols: "12", sm: "8" } },
+            [
+              _c(
+                "v-card",
+                { attrs: { flat: "" } },
+                [
+                  _vm.progress
+                    ? _c("v-skeleton-loader", { attrs: { type: "card" } })
+                    : _c(
+                        "v-card-text",
+                        [
+                          _vm.teacher
+                            ? _c(
+                                "v-tabs",
+                                {
+                                  attrs: {
+                                    "icons-and-text": "",
+                                    color: _vm.$store.state.app.ThemeColor,
+                                  },
+                                  model: {
+                                    value: _vm.tab,
+                                    callback: function ($$v) {
+                                      _vm.tab = $$v
+                                    },
+                                    expression: "tab",
+                                  },
+                                },
+                                [
+                                  _c("v-tabs-slider"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-tab",
+                                    { attrs: { href: "#classes-tab" } },
+                                    [
+                                      _vm._v(
+                                        "\n\n          " +
+                                          _vm._s(_vm.teacher.first_name) +
+                                          "'s Subjects & Classes\n      "
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-tab", { attrs: { href: "#log-tab" } }, [
+                                    _vm._v(
+                                      "\n          " +
+                                        _vm._s(_vm.teacher.first_name) +
+                                        "'s usage logs\n      "
+                                    ),
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-tab",
+                                    { attrs: { href: "#feedback-tab" } },
+                                    [
+                                      _vm._v(
+                                        "\n        " +
+                                          _vm._s(_vm.teacher.first_name) +
+                                          "'s concerns and feedback\n      "
+                                      ),
+                                    ]
+                                  ),
+                                ],
+                                1
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _c(
+                            "v-tabs-items",
+                            {
+                              model: {
+                                value: _vm.tab,
+                                callback: function ($$v) {
+                                  _vm.tab = $$v
+                                },
+                                expression: "tab",
+                              },
+                            },
+                            [
+                              _c(
+                                "v-tab-item",
+                                { attrs: { value: "classes-tab" } },
+                                [
+                                  _c(
+                                    "v-card",
+                                    { attrs: { flat: "" } },
+                                    [
+                                      _c("v-card-text", [
+                                        _c("h1", [_vm._v("tab here")]),
+                                      ]),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-tab-item",
+                                { attrs: { value: "log-tab" } },
+                                [
+                                  _c(
+                                    "v-card",
+                                    { attrs: { flat: "" } },
+                                    [
+                                      _c("v-card-text", [
+                                        _c("h1", [_vm._v("feedback tab here")]),
+                                      ]),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-tab-item",
+                                { attrs: { value: "feedback-tab" } },
+                                [
+                                  _c(
+                                    "v-card",
+                                    { attrs: { flat: "" } },
+                                    [
+                                      _c("v-card-text", [
+                                        _c("h1", [_vm._v("feedback tab here")]),
+                                      ]),
+                                    ],
+                                    1
+                                  ),
+                                ],
+                                1
+                              ),
+                            ],
+                            1
+                          ),
+                        ],
+                        1
+                      ),
+                ],
+                1
+              ),
+            ],
+            1
+          ),
         ],
         1
       ),

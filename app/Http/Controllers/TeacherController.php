@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateTeacherRequest;
+use App\Http\Requests\UpdateTeacherRequest;
 use App\Http\Resources\TeacherResource;
 use App\Models\Teacher;
 use App\Repositories\SchoolRepository;
@@ -33,7 +34,7 @@ class TeacherController extends Controller
 
     }
 
-    public function update(CreateTeacherRequest $request, $id): JsonResponse
+    public function update(UpdateTeacherRequest $request, $id): JsonResponse
     {
         if (!Teacher::find($id)) {
             return error([], "Teacher not found", Response::HTTP_NOT_FOUND);
@@ -41,6 +42,19 @@ class TeacherController extends Controller
 
         $teacher = TeacherRepository::update($request, $id);
         return success(new TeacherResource($teacher), "Teacher updated");
+    }
+
+
+    public function show($id): JsonResponse
+    {
+
+        $teacher = Teacher::find($id);
+        if (!$teacher) {
+            return error([], "teacher not found", Response::HTTP_NOT_FOUND);
+        }
+
+        return success(new TeacherResource($teacher), "Teacher information retrieved");
+
     }
 
 }

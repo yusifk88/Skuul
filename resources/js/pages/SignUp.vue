@@ -17,7 +17,7 @@
             outlined
             filled
             label="First Name"
-            color="teal"
+            :color="$store.state.app.ThemeColor"
             :rules="requiredRules"
             v-model="first_name"
             flat
@@ -28,7 +28,7 @@
             outlined
             filled
             label="Last Name"
-            color="teal"
+            :color="$store.state.app.ThemeColor"
             :rules="requiredRules"
 
         ></v-text-field>
@@ -39,7 +39,7 @@
             outlined
             filled
             label="Phone Number"
-            color="teal"
+            :color="$store.state.app.ThemeColor"
             :rules="requiredRules"
 
         ></v-text-field>
@@ -50,7 +50,7 @@
             outlined
             filled
             label="Email"
-            color="teal"
+            :color="$store.state.app.ThemeColor"
             :rules="emailRules"
 
         ></v-text-field>
@@ -61,7 +61,7 @@
             outlined
             filled
             label="Password"
-            color="teal"
+            :color="$store.state.app.ThemeColor"
             :rules="requiredRules"
 
         ></v-text-field>
@@ -72,12 +72,12 @@
             outlined
             filled
             label="Re-enter Password"
-            color="teal"
+            :color="$store.state.app.ThemeColor"
             :rules="requiredRules"
 
         ></v-text-field>
         <v-btn
-            color="teal"
+            :color="$store.state.app.ThemeColor"
             block
             rounded
             large

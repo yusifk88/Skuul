@@ -17,7 +17,8 @@ class Teacher extends Model
     protected $casts = [
         'dob' => 'date',
         'date_assumed' => 'date',
-        'appointment_date' => 'date'
+        'appointment_date' => 'date',
+        'other_names'=>'string'
 
     ];
 }

@@ -5397,6 +5397,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -5880,6 +5882,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['settings'],
   name: "SettingsComponent",
@@ -5989,6 +5994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var es6_promise_auto__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! es6-promise/auto */ "./node_modules/es6-promise/auto.js");
 /* harmony import */ var es6_promise_auto__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(es6_promise_auto__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _plugins_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./plugins/store */ "./resources/js/plugins/store.js");
@@ -6003,9 +6009,7 @@ __webpack_require__.r(__webpack_exports__);
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -6030,7 +6034,10 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 
 
 
-var app = new Vue({
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var app = new vue__WEBPACK_IMPORTED_MODULE_8__["default"]({
   el: '#app',
   vuetify: _plugins_vuetify__WEBPACK_IMPORTED_MODULE_2__["default"],
   router: _router__WEBPACK_IMPORTED_MODULE_6__.router,
@@ -6060,6 +6067,10 @@ var app = new Vue({
   mounted: function mounted() {
     _plugins_store__WEBPACK_IMPORTED_MODULE_1__.store.commit('init');
   }
+});
+vue__WEBPACK_IMPORTED_MODULE_8__["default"].filter('human_date', function (d) {
+  if (!d) return '';
+  return dayjs(d).format('MMM D, YYYY');
 });
 
 /***/ }),
@@ -6146,6 +6157,10 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
+    app: {
+      ThemeColor: 'teal',
+      ThemeText: "teal--text"
+    },
     ImgPreview: "/img/photo.jpg",
     AppName: "Skuul",
     flashSuccess: false,
@@ -6154,6 +6169,34 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     errors: null,
     user: null,
     initializing: false,
+    ranks: [{
+      value: 'supi',
+      text: "Sup. i"
+    }, {
+      value: 'supii',
+      text: "Sup. ii"
+    }, {
+      value: 'Snr_sup_i',
+      text: "Snr. Sup. i"
+    }, {
+      value: 'Snr_sup_ii',
+      text: "Snr. Sup. ii"
+    }, {
+      value: 'asst_dr_i',
+      text: "Asst. Dir. i"
+    }, {
+      value: 'asst_dr_ii',
+      text: "Asst. Dir. ii"
+    }, {
+      value: 'dr_i',
+      text: "Dir. i"
+    }, {
+      value: 'dr_ii',
+      text: "Dir. ii"
+    }, {
+      value: 'other',
+      text: "Other"
+    }],
     requiredRules: [function (v) {
       return !!v || 'This field is required';
     }]
@@ -6246,6 +6289,12 @@ var routes = [{
   name: "Teachers",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_pages_teachers_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/teachers */ "./resources/js/pages/teachers/index.vue"));
+  }
+}, {
+  path: '/teachers/:id',
+  name: "Teachers",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_teachers_preview_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/teachers/preview */ "./resources/js/pages/teachers/preview.vue"));
   }
 }, {
   path: '/auth',
@@ -31084,8 +31133,8 @@ var render = function () {
                                       _c(
                                         "h1",
                                         {
-                                          staticClass:
-                                            "mt-5 teal--text font-weight-light",
+                                          staticClass: "mt-5 font-weight-light",
+                                          class: _vm.$store.state.ThemeText,
                                         },
                                         [
                                           _vm._v(
@@ -31100,8 +31149,8 @@ var render = function () {
                                       _c(
                                         "h3",
                                         {
-                                          staticClass:
-                                            "font-weight-light teal--text mt-5",
+                                          staticClass: "font-weight-light mt-5",
+                                          class: _vm.$store.state.ThemeText,
                                         },
                                         [_vm._v("Let's get you up and running")]
                                       ),
@@ -31109,8 +31158,8 @@ var render = function () {
                                       _c(
                                         "h1",
                                         {
-                                          staticClass:
-                                            "mt-5 teal--text font-weight-light",
+                                          staticClass: "mt-5 font-weight-light",
+                                          class: _vm.$store.state.ThemeText,
                                         },
                                         [_vm._v("Setup your Skuul to continue")]
                                       ),
@@ -31170,8 +31219,8 @@ var render = function () {
                                     _c(
                                       "h3",
                                       {
-                                        staticClass:
-                                          "font-weight-light teal--text",
+                                        staticClass: "font-weight-light",
+                                        class: _vm.$store.state.ThemeText,
                                       },
                                       [
                                         _vm._v(
@@ -31186,8 +31235,8 @@ var render = function () {
                                     _c(
                                       "h2",
                                       {
-                                        staticClass:
-                                          "font-weight-light teal--text mb-5",
+                                        staticClass: "font-weight-light mb-5",
+                                        class: _vm.$store.state.ThemeText,
                                       },
                                       [
                                         _vm._v(
@@ -31233,8 +31282,8 @@ var render = function () {
                                       _c(
                                         "h3",
                                         {
-                                          staticClass:
-                                            "teal--text font-weight-light",
+                                          staticClass: "font-weight-light",
+                                          class: _vm.$store.state.ThemeText,
                                         },
                                         [
                                           _vm._v(
@@ -31248,7 +31297,8 @@ var render = function () {
                                         {
                                           staticClass: "mt-5",
                                           attrs: {
-                                            color: "teal",
+                                            color:
+                                              _vm.$store.state.app.ThemeColor,
                                             rounded: "",
                                             text: "",
                                             block: "",
@@ -31324,7 +31374,7 @@ var render = function () {
         fixed: "",
         floating: "",
         app: "",
-        color: "teal",
+        color: _vm.$store.state.app.ThemeColor,
         dark: "",
         width: "200",
         "expand-on-hover": _vm.showMiniVariant,
@@ -31488,7 +31538,7 @@ var render = function () {
                 attrs: {
                   label: "Name of school",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   outlined: "",
                   rules: _vm.$store.state.requiredRules,
                 },
@@ -31506,7 +31556,7 @@ var render = function () {
                   type: "tel",
                   label: "School Tel. Number",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   outlined: "",
                 },
                 model: {
@@ -31523,7 +31573,7 @@ var render = function () {
                   type: "email",
                   label: "School Email Address",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   outlined: "",
                 },
                 model: {
@@ -31539,7 +31589,7 @@ var render = function () {
                 attrs: {
                   label: "Address",
                   filled: "",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   outlined: "",
                   rows: "2",
                   "auto-grow": "",
@@ -31558,7 +31608,7 @@ var render = function () {
                 {
                   attrs: {
                     block: "",
-                    color: "teal",
+                    color: _vm.$store.state.app.ThemeColor,
                     rounded: "",
                     large: "",
                     depressed: "",
@@ -31728,6 +31778,7 @@ var render = function () {
                   label: "Class work ratio",
                   suffix: "%",
                   type: "number",
+                  color: _vm.$store.state.app.ThemeColor,
                 },
                 model: {
                   value: _vm.class_work_ratio,
@@ -31745,6 +31796,7 @@ var render = function () {
                   filled: "",
                   label: "Project work ratio",
                   suffix: "%",
+                  color: _vm.$store.state.app.ThemeColor,
                 },
                 model: {
                   value: _vm.project_work_ratio,
@@ -31762,6 +31814,7 @@ var render = function () {
                   filled: "",
                   label: "Exam ratio",
                   suffix: "%",
+                  color: _vm.$store.state.app.ThemeColor,
                 },
                 model: {
                   value: _vm.exam_ratio,
@@ -31797,7 +31850,7 @@ var render = function () {
                 "v-btn",
                 {
                   attrs: {
-                    color: "teal",
+                    color: _vm.$store.state.app.ThemeColor,
                     rounded: "",
                     large: "",
                     depressed: "",
@@ -94865,7 +94918,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_pages_Dashboard_vue":1,"resources_js_pages_grades_index_vue":1,"resources_js_pages_classes_index_vue":1,"resources_js_pages_subjects_index_vue":1,"resources_js_pages_students_index_vue":1,"resources_js_pages_teachers_index_vue":1,"resources_js_pages_Authentication_vue":1,"resources_js_pages_Login_vue":1,"resources_js_pages_SignUp_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_pages_Dashboard_vue":1,"resources_js_pages_grades_index_vue":1,"resources_js_pages_classes_index_vue":1,"resources_js_pages_subjects_index_vue":1,"resources_js_pages_students_index_vue":1,"resources_js_pages_teachers_index_vue":1,"resources_js_pages_teachers_preview_vue":1,"resources_js_pages_Authentication_vue":1,"resources_js_pages_Login_vue":1,"resources_js_pages_SignUp_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

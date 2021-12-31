@@ -294,7 +294,7 @@ var render = function () {
                   outlined: "",
                   filled: "",
                   label: "First Name",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   rules: _vm.requiredRules,
                   flat: "",
                 },
@@ -313,7 +313,7 @@ var render = function () {
                   outlined: "",
                   filled: "",
                   label: "Last Name",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   rules: _vm.requiredRules,
                 },
                 model: {
@@ -331,7 +331,7 @@ var render = function () {
                   outlined: "",
                   filled: "",
                   label: "Phone Number",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   rules: _vm.requiredRules,
                 },
                 model: {
@@ -349,7 +349,7 @@ var render = function () {
                   outlined: "",
                   filled: "",
                   label: "Email",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   rules: _vm.emailRules,
                 },
                 model: {
@@ -367,7 +367,7 @@ var render = function () {
                   outlined: "",
                   filled: "",
                   label: "Password",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   rules: _vm.requiredRules,
                 },
                 model: {
@@ -385,7 +385,7 @@ var render = function () {
                   outlined: "",
                   filled: "",
                   label: "Re-enter Password",
-                  color: "teal",
+                  color: _vm.$store.state.app.ThemeColor,
                   rules: _vm.requiredRules,
                 },
                 model: {
@@ -401,7 +401,7 @@ var render = function () {
                 "v-btn",
                 {
                   attrs: {
-                    color: "teal",
+                    color: _vm.$store.state.app.ThemeColor,
                     block: "",
                     rounded: "",
                     large: "",

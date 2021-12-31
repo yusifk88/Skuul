@@ -7,17 +7,17 @@
             outlined
           filled
           label="E-mail"
-          color="teal"
+          :color="$store.state.app.ThemeColor"
       ></v-text-field>
       <v-text-field
           type="password"
             outlined
           filled
           label="Password"
-          color="teal"
+          :color="$store.state.app.ThemeColor"
       ></v-text-field>
       <v-btn
-          color="teal"
+          :color="$store.state.app.ThemeColor"
           block
           rounded
           large

@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Http\Requests\CreateTeacherRequest;
+use App\Http\Requests\UpdateTeacherRequest;
 use App\Models\Teacher;
 use Auth;
 
@@ -21,7 +22,7 @@ class TeacherRepository
     }
 
 
-    public static function update(CreateTeacherRequest $request, int $id): Teacher
+    public static function update(UpdateTeacherRequest $request, int $id): Teacher
     {
         $teacher = Teacher::find($id);
 

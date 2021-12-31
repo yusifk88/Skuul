@@ -15,7 +15,7 @@
                 <v-text-field
                     label="Name of school"
                     filled
-                    color="teal"
+                    :color="$store.state.app.ThemeColor"
                     outlined
                     v-model="name"
                     :rules="$store.state.requiredRules"
@@ -25,7 +25,7 @@
                     type="tel"
                     label="School Tel. Number"
                     filled
-                    color="teal"
+                    :color="$store.state.app.ThemeColor"
                     outlined
                     v-model="phone_number"
                 ></v-text-field>
@@ -34,7 +34,7 @@
                     type="email"
                     label="School Email Address"
                     filled
-                    color="teal"
+                    :color="$store.state.app.ThemeColor"
                     outlined
                     v-model="email"
                 ></v-text-field>
@@ -43,7 +43,7 @@
                 <v-textarea
                     label="Address"
                     filled
-                    color="teal"
+                    :color="$store.state.app.ThemeColor"
                     outlined
                     rows="2"
                     auto-grow
@@ -51,7 +51,7 @@
                 ></v-textarea>
                 <v-btn
                     block
-                    color="teal"
+                    :color="$store.state.app.ThemeColor"
                     rounded
                     large
                     depressed

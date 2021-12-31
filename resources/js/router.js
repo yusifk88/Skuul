@@ -35,6 +35,11 @@ const routes = [
         component: () => import('./pages/teachers')
     },
     {
+        path: '/teachers/:id',
+        name: "Teachers",
+        component: () => import('./pages/teachers/preview')
+    },
+    {
       path: '/auth',
       redirect:'/auth/login'
     },

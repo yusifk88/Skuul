@@ -10,6 +10,7 @@
                 suffix="%"
                 v-model="class_work_ratio"
                 type="number"
+                :color="$store.state.app.ThemeColor"
             ></v-text-field>
 
 
@@ -20,6 +21,7 @@
                 label="Project work ratio"
                 suffix="%"
                 v-model="project_work_ratio"
+                :color="$store.state.app.ThemeColor"
             ></v-text-field>
 
             <v-text-field
@@ -29,6 +31,7 @@
                 label="Exam ratio"
                 suffix="%"
                 v-model="exam_ratio"
+                :color="$store.state.app.ThemeColor"
             ></v-text-field>
 
             <v-alert v-if="total!==100" type="error" color="error lighten-4 red--text">
@@ -36,7 +39,7 @@
             </v-alert>
 
             <v-btn
-                color="teal"
+                :color="$store.state.app.ThemeColor"
                 rounded
                 large
                 depressed

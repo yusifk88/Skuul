@@ -1,12 +1,16 @@
 <template>
     <v-row>
-        <v-col cols="12" class="teal lighten-5 teal--text">
+        <v-col cols="12"
+               :class="`${$store.state.app.ThemeColor}  ${$store.state.app.ThemeText}`"
+               class="lighten-5"
+
+        >
 
             <v-row>
 
                 <v-col cols="1">
 
-                    <v-btn @click="$router.back()" text rounded color="teal"><v-icon>mdi-arrow-left</v-icon>Back</v-btn>
+                    <v-btn @click="$router.back()" text rounded :color="$store.state.app.ThemeColor" ><v-icon>mdi-arrow-left</v-icon>Back</v-btn>
                 </v-col>
 
                 <v-col cols="8" >
@@ -17,10 +21,11 @@
                 <v-col cols="2" >
 
                     <v-btn
-                        color="teal"
+                        :color="$store.state.app.ThemeColor"
                         rounded
                         depressed
                         dark
+                        v-if="ShowAddBtn"
                         @click="$emit('create',true)"
                     >{{Btnlabel}}<v-icon>mdi-plus</v-icon></v-btn>
                 </v-col>
@@ -33,7 +38,16 @@
 <script>
 export default {
     name: "TitleBarComponent",
-    props:['title','AddLabel','BtnIcon'],
+    props:{
+      title:{
+      },
+        AddLabel:{},
+        BtnIcon:{},
+        ShowAddBtn:{
+          default:true,
+            type:Boolean
+        }
+    },
     computed:{
         MainTitle(){
             return this.title ? this.title : this.$route.name;

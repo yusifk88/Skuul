@@ -4,7 +4,7 @@
         fixed
         floating
         app
-        color="teal"
+        :color="$store.state.app.ThemeColor"
         dark
         width="200"
         :expand-on-hover="showMiniVariant"
