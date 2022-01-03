@@ -975,6 +975,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -3792,93 +3796,114 @@ var render = function () {
         _vm._v(" "),
         _c(
           "tbody",
-          _vm._l(_vm.assignments, function (assignment) {
-            return _c("tr", { key: assignment.id }, [
-              _c(
-                "td",
-                [
+          [
+            _vm._l(_vm.assignments, function (assignment) {
+              return _vm.assignments.length
+                ? _c("tr", { key: assignment.id }, [
+                    _c(
+                      "td",
+                      [
+                        _c(
+                          "v-btn",
+                          {
+                            staticClass: "pa-0",
+                            attrs: {
+                              text: "",
+                              color: _vm.$store.state.app.ThemeColor,
+                              small: "",
+                              to: "/subjects/" + assignment.subject_id,
+                              target: "_blank",
+                            },
+                          },
+                          [
+                            _vm._v(
+                              "\n                " +
+                                _vm._s(assignment.subject.name) +
+                                " "
+                            ),
+                            _c("v-icon", { attrs: { "x-small": "" } }, [
+                              _vm._v("mdi-arrow-top-right"),
+                            ]),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      [
+                        _c(
+                          "v-btn",
+                          {
+                            staticClass: "pa-0",
+                            attrs: {
+                              text: "",
+                              color: _vm.$store.state.app.ThemeColor,
+                              small: "",
+                              to: "/classes/" + assignment.class_id,
+                              target: "_blank",
+                            },
+                          },
+                          [
+                            _vm._v(
+                              "\n\n                " +
+                                _vm._s(assignment.class.name) +
+                                " "
+                            ),
+                            _c("v-icon", { attrs: { "x-small": "" } }, [
+                              _vm._v("mdi-arrow-top-right"),
+                            ]),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      [
+                        _c(
+                          "v-btn",
+                          {
+                            staticClass: "pa-0",
+                            attrs: { color: "red", text: "", small: "" },
+                            on: {
+                              click: function ($event) {
+                                _vm.SelectedAssignment = assignment
+                                _vm.detach_warning_dialog = true
+                              },
+                            },
+                          },
+                          [_vm._v("Detach")]
+                        ),
+                      ],
+                      1
+                    ),
+                  ])
+                : _vm._e()
+            }),
+            _vm._v(" "),
+            _vm.assignments.length === 0
+              ? _c("tr", [
                   _c(
-                    "v-btn",
+                    "td",
                     {
-                      staticClass: "pa-0",
-                      attrs: {
-                        text: "",
-                        color: _vm.$store.state.app.ThemeColor,
-                        small: "",
-                        to: "/subjects/" + assignment.subject_id,
-                        target: "_blank",
-                      },
+                      staticClass: "text-center text--disabled",
+                      attrs: { colspan: "3" },
                     },
                     [
                       _vm._v(
-                        "\n                " +
-                          _vm._s(assignment.subject.name) +
-                          " "
+                        'You have not assigned any subjects and classes to this teacher yet to assign a subject and class, click on the "Assign. New" button'
                       ),
-                      _c("v-icon", { attrs: { "x-small": "" } }, [
-                        _vm._v("mdi-arrow-top-right"),
-                      ]),
-                    ],
-                    1
+                    ]
                   ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "td",
-                [
-                  _c(
-                    "v-btn",
-                    {
-                      staticClass: "pa-0",
-                      attrs: {
-                        text: "",
-                        color: _vm.$store.state.app.ThemeColor,
-                        small: "",
-                        to: "/classes/" + assignment.class_id,
-                        target: "_blank",
-                      },
-                    },
-                    [
-                      _vm._v(
-                        "\n\n                " +
-                          _vm._s(assignment.class.name) +
-                          " "
-                      ),
-                      _c("v-icon", { attrs: { "x-small": "" } }, [
-                        _vm._v("mdi-arrow-top-right"),
-                      ]),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "td",
-                [
-                  _c(
-                    "v-btn",
-                    {
-                      staticClass: "pa-0",
-                      attrs: { color: "red", text: "", small: "" },
-                      on: {
-                        click: function ($event) {
-                          _vm.SelectedAssignment = assignment
-                          _vm.detach_warning_dialog = true
-                        },
-                      },
-                    },
-                    [_vm._v("Detach")]
-                  ),
-                ],
-                1
-              ),
-            ])
-          }),
-          0
+                ])
+              : _vm._e(),
+          ],
+          2
         ),
       ]),
       _vm._v(" "),

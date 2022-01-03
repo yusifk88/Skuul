@@ -24,6 +24,7 @@
         <tr
             v-for="assignment in assignments"
             :key="assignment.id"
+            v-if="assignments.length"
         >
             <td>
 
@@ -72,6 +73,9 @@
             </td>
         </tr>
 
+        <tr v-if="assignments.length===0">
+            <td colspan="3" class="text-center text--disabled">You have not assigned any subjects and classes to this teacher yet to assign a subject and class, click on the "Assign. New" button</td>
+        </tr>
         </tbody>
     </v-simple-table>
 
