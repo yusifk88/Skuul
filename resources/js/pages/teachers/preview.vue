@@ -88,7 +88,7 @@
 
                     <v-list-item-content>
                         <v-list-item-title
-                            class="font-weight-black">{{ teacher.staff_number ? teacher.staff_number : 'N/A' }}</v-list-item-title>
+                            class="font-weight-black">{{ teacher.staff_id ? teacher.staff_id : 'N/A' }}</v-list-item-title>
                         <v-list-item-subtitle class="text--disabled">Staff Number</v-list-item-subtitle>
                     </v-list-item-content>
                     </v-list-item>
@@ -183,20 +183,13 @@
                         <v-list-item-subtitle class="text--disabled">Rank</v-list-item-subtitle>
                     </v-list-item-content>
 
-
-
-
-
                     </v-list-item>
 
 
                     <v-list-item>
-
                          <v-list-item-content>
                         <v-list-item-title class="font-weight-black">
-
-                            {{teacher.bank_name ? teacher.bank_name : "N/A"}}
-
+                            {{teacher.bank ? teacher.bank : "N/A"}}
                         </v-list-item-title>
                         <v-list-item-subtitle class="text--disabled">Bank Name</v-list-item-subtitle>
                     </v-list-item-content>
@@ -206,9 +199,7 @@
                          <v-list-item-content>
                         <v-list-item-title
                             class="font-weight-black">
-
-
-                           {{teacher.bank_account_number ? teacher.bank_account_number : "N/A"}}
+                           {{teacher.account_number ? teacher.account_number : "N/A"}}
                         </v-list-item-title>
                         <v-list-item-subtitle class="text--disabled">Account Number</v-list-item-subtitle>
                     </v-list-item-content>
@@ -224,67 +215,8 @@
     </v-col>
 
     <v-col cols="12" sm="8" class="mx-auto">
-        <v-card flat>
-            <v-skeleton-loader type="card" v-if="progress"></v-skeleton-loader>
-            <v-card-text v-else>
-
-                <v-tabs
-                    v-if="teacher"
-                    v-model="tab"
-                    icons-and-text
-                    :color="$store.state.app.ThemeColor"
-                >
-      <v-tabs-slider></v-tabs-slider>
-
-      <v-tab href="#classes-tab">
-
-          {{teacher.first_name }}'s Subjects & Classes
-      </v-tab>
-
-      <v-tab href="#log-tab">
-          {{teacher.first_name }}'s usage logs
-      </v-tab>
-
-      <v-tab href="#feedback-tab">
-        {{teacher.first_name }}'s concerns and feedback
-      </v-tab>
-    </v-tabs>
-
-    <v-tabs-items v-model="tab">
-      <v-tab-item
-
-          value="classes-tab"
-      >
-        <v-card flat>
-          <v-card-text><h1>tab here</h1></v-card-text>
-        </v-card>
-      </v-tab-item>
-
-        <v-tab-item
-
-            value="log-tab"
-        >
-        <v-card flat>
-          <v-card-text><h1>feedback tab here</h1></v-card-text>
-        </v-card>
-      </v-tab-item>
-
-        <v-tab-item
-
-            value="feedback-tab"
-        >
-        <v-card flat>
-          <v-card-text><h1>feedback tab here</h1></v-card-text>
-        </v-card>
-      </v-tab-item>
-
-
-
-
-    </v-tabs-items>
-
-            </v-card-text>
-        </v-card>
+        <v-skeleton-loader type="card" v-if="progress"></v-skeleton-loader>
+        <teacher-rocord-tabs v-else :teacher="teacher"></teacher-rocord-tabs>
     </v-col>
 </v-row>
             </span>
@@ -294,15 +226,16 @@
 <script>
 import TitleBarComponent from "../../components/TitleBarComponent";
 import TeacherMenuComponent from "../../components/TeacherMenuComponent";
+import TeacherRocordTabs from "../../components/TeacherRocordTabs";
 
 export default {
     name: "preview",
-    components: {TeacherMenuComponent, TitleBarComponent},
+    components: {TeacherRocordTabs, TeacherMenuComponent, TitleBarComponent},
     data() {
         return {
             teacher: null,
             progress: false,
-            tab:'classes-tab'
+
         }
     },
     computed: {

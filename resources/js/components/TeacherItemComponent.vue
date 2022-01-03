@@ -25,7 +25,7 @@
                 <strong>Gender: </strong>{{teacher.gender==='F' ? 'Female' : 'Male'}}
 
                 <span v-if="teacher.rank">
-                            <strong>Rank: </strong>{{teacher.rank}}
+                            <strong>Rank: </strong>{{rank_name}}
 
                            </span>
             </v-list-item-subtitle>
@@ -47,6 +47,15 @@ export default {
     components: {TeacherMenuComponent},
     props:['teacher'],
     name: "TeacherItemComponent",
+    computed:{
+        rank_name(){
+            const rank = this.$store.state.ranks.find(rank=>{
+                return rank.value = this.teacher.rank;
+            })
+
+            return rank ? rank.text : '';
+        }
+    },
     methods:{
         updated(teacher){
             this.$emit('updated',teacher);

@@ -75,8 +75,13 @@ Route::middleware('auth:sanctum')->group(function () {
      */
 
     Route::post('/teacher', [TeacherController::class, 'store']);
+    Route::post('/teacher/{id}/assign/subject', [TeacherController::class, 'AssignSubjects']);
     Route::post('/teacher/{id}', [TeacherController::class, 'update']);
     Route::get('teachers', [TeacherController::class, 'index']);
     Route::get('teacher/{id}', [TeacherController::class, 'show']);
+    Route::get('teacher/{id}/subject/assignments', [TeacherController::class, 'GetAssignments']);
+    Route::delete('teacher/detach/subject/assignment/{id}',[TeacherController::class,'DetachAssignment']);
+
 
 });
+

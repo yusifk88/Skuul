@@ -13,6 +13,7 @@
         :loading="progress"
         @change="selected"
 
+
     >
         <template v-slot:prepend-item>
             <v-btn rounded block color="teal" text @click="NewClass=true">Create new class</v-btn>

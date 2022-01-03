@@ -446,6 +446,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: ['teacher'],
   name: "TeacherItemComponent",
+  computed: {
+    rank_name: function rank_name() {
+      var _this = this;
+
+      var rank = this.$store.state.ranks.find(function (rank) {
+        return rank.value = _this.teacher.rank;
+      });
+      return rank ? rank.text : '';
+    }
+  },
   methods: {
     updated: function updated(teacher) {
       this.$emit('updated', teacher);
@@ -1770,9 +1780,7 @@ var render = function () {
             _vm.teacher.rank
               ? _c("span", [
                   _c("strong", [_vm._v("Rank: ")]),
-                  _vm._v(
-                    _vm._s(_vm.teacher.rank) + "\n\n                       "
-                  ),
+                  _vm._v(_vm._s(_vm.rank_name) + "\n\n                       "),
                 ])
               : _vm._e(),
           ]),
