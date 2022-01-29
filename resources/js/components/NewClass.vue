@@ -15,6 +15,7 @@
 
                 <grade-selector
                     @selected="id=>grade_id=id"
+                    :id="grade_id"
                 ></grade-selector>
 
                 <v-textarea
@@ -34,7 +35,9 @@
         <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn text @click="$emit('closed')">Cancel</v-btn>
-            <v-btn text :color="$store.state.app.ThemeColor" rounded @click="save" :loading="progress">Save</v-btn>
+            <v-btn text :color="$store.state.app.ThemeColor" rounded @click="save" :loading="progress">Save
+                {{ edit ? "Changes" : "" }}
+            </v-btn>
         </v-card-actions>
     </v-card>
 </template>
@@ -45,7 +48,7 @@ import GradeSelector from "./GradeSelector";
 export default {
     name: "NewClass",
     components: {GradeSelector},
-    props: ['edit'],
+    props: ['edit', "defaultClass"],
     data() {
         return {
             name: "",
@@ -60,10 +63,23 @@ export default {
             return this.edit ? "Edit class" : "Create new class";
         }
     },
+    watch: {
+        defaultClass() {
+            this.defaultClass();
+        }
+    },
     methods: {
+        setValues() {
+            this.name = this.defaultClass.name;
+            this.description = this.defaultClass.description;
+            this.grade_id = this.defaultClass.grade_id;
+        },
         done(Schoolclass) {
-            this.name = "";
-            this.description = "";
+            if (!this.edit) {
+                this.name = "";
+                this.description = "";
+            }
+
             this.$emit('created', Schoolclass);
             this.$emit('closed');
         },
@@ -74,7 +90,9 @@ export default {
                 formData.append('name', this.name);
                 formData.append('description', this.description);
                 formData.append('grade_id', this.grade_id);
-                axios.post('/class', formData)
+                const url = this.edit ? "/class/" + this.defaultClass.id : "/class";
+
+                axios.post(url, formData)
                     .then(res => {
                         this.progress = false;
                         this.done(res.data.data);
@@ -84,6 +102,12 @@ export default {
                     })
             }
 
+        }
+    },
+    mounted() {
+
+        if (this.edit) {
+            this.setValues();
         }
     }
 }

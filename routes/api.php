@@ -44,6 +44,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/grade/{id}', [GradesController::class, 'update']);
     Route::get('/grades', [GradesController::class, 'index']);
     Route::get('/grade/{id}', [GradesController::class, 'show']);
+    Route::get('/grade/{id}/classes', [GradesController::class, 'classes']);
 
     /**
      * Classes route

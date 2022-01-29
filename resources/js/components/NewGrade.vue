@@ -36,7 +36,7 @@
 <script>
 export default {
     name: "NewGrade",
-    props: ['edit'],
+    props: ['edit', 'grade'],
     data() {
         return {
             name: "",
@@ -47,9 +47,22 @@ export default {
     computed: {
         title() {
             return this.edit ? "Edit Grade" : "Create New Grade/Level"
+        },
+        defaultGrade(){
+            return this.grade;
         }
     },
+    watch:{
+        defaultGrade(){
+          this.setValues();
+      }
+    },
     methods: {
+        setValues() {
+            this.name = this.grade.name;
+            this.description = this.grade.description;
+            console.log(this.grade)
+        },
         done(grade) {
             this.name = "";
             this.description = '';
@@ -64,7 +77,8 @@ export default {
                 const formData = new FormData();
                 formData.append('name', this.name);
                 formData.append('description', this.description);
-                axios.post('/grade', formData)
+                const url = this.edit ? '/grade/' + this.grade.id : "/grade";
+                axios.post(url, formData)
                     .then(res => {
                         this.progress = false;
                         this.done(res.data.data);
@@ -76,6 +90,9 @@ export default {
             }
 
         }
+    },
+    mounted() {
+        this.setValues();
     }
 }
 </script>

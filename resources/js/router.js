@@ -15,9 +15,19 @@ const routes = [
         component: () => import('./pages/grades')
     },
     {
+        path: '/grades/:id',
+        name: "Grade",
+        component: () => import('./pages/grades/preview')
+    },
+    {
         path: '/classes',
         name: "Classes",
         component: () => import('./pages/classes')
+    },
+    {
+        path: '/classes/:id',
+        name: "Classes",
+        component: () => import('./pages/classes/preview')
     },
     {
         path: '/subjects',

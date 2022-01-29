@@ -6267,10 +6267,22 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_pages_grades_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/grades */ "./resources/js/pages/grades/index.vue"));
   }
 }, {
+  path: '/grades/:id',
+  name: "Grade",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_grades_preview_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/grades/preview */ "./resources/js/pages/grades/preview.vue"));
+  }
+}, {
   path: '/classes',
   name: "Classes",
   component: function component() {
     return __webpack_require__.e(/*! import() */ "resources_js_pages_classes_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/classes */ "./resources/js/pages/classes/index.vue"));
+  }
+}, {
+  path: '/classes/:id',
+  name: "Classes",
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ "resources_js_pages_classes_preview_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/classes/preview */ "./resources/js/pages/classes/preview.vue"));
   }
 }, {
   path: '/subjects',
@@ -94918,7 +94930,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_pages_Dashboard_vue":1,"resources_js_pages_grades_index_vue":1,"resources_js_pages_classes_index_vue":1,"resources_js_pages_subjects_index_vue":1,"resources_js_pages_students_index_vue":1,"resources_js_pages_teachers_index_vue":1,"resources_js_pages_teachers_preview_vue":1,"resources_js_pages_Authentication_vue":1,"resources_js_pages_Login_vue":1,"resources_js_pages_SignUp_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_pages_Dashboard_vue":1,"resources_js_pages_grades_index_vue":1,"resources_js_pages_grades_preview_vue":1,"resources_js_pages_classes_index_vue":1,"resources_js_pages_classes_preview_vue":1,"resources_js_pages_subjects_index_vue":1,"resources_js_pages_students_index_vue":1,"resources_js_pages_teachers_index_vue":1,"resources_js_pages_teachers_preview_vue":1,"resources_js_pages_Authentication_vue":1,"resources_js_pages_Login_vue":1,"resources_js_pages_SignUp_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

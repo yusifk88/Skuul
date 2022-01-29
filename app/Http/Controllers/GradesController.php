@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateGradeRequest;
 use App\Http\Resources\GradeResource;
+use App\Http\Resources\SchoolClassResource;
 use App\Models\Grade;
+use App\Models\SchoolClass;
 use App\Repositories\GradeRepository;
 use Auth;
 use Illuminate\Http\JsonResponse;
@@ -51,5 +53,16 @@ class GradesController extends Controller
 
         return error([], 'Grade not found');
     }
+
+
+    public function classes(int $id): JsonResponse
+    {
+
+        $classes = SchoolClass::where('grade_id',$id)->orderBy('name')->get();
+        return success(SchoolClassResource::collection($classes),"Classes for this grade retrieved");
+
+    }
+
+
 
 }

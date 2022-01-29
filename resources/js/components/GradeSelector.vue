@@ -39,6 +39,12 @@ export default {
 
         }
     },
+    watch:{
+      id(){
+          this.grade_id = this.id;
+
+      }
+    },
     methods:{
         gradeCreated(grade){
             this.grades.unshift(grade);
@@ -58,6 +64,9 @@ export default {
     },
     mounted() {
         this.getGrades();
+        if (this.id){
+            this.grade_id = this.id;
+        }
     }
 }
 </script>

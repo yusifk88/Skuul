@@ -2092,7 +2092,7 @@ var render = function () {
         [
           _c(
             "v-col",
-            { staticClass: "mx-auto", attrs: { cols: "12", sm: "10" } },
+            { staticClass: "mx-auto", attrs: { cols: "12", sm: "8" } },
             [
               _vm.progress
                 ? _c("v-skeleton-loader", { attrs: { type: "list-item@10" } })

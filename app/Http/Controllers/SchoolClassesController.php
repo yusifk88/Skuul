@@ -24,7 +24,7 @@ class SchoolClassesController extends Controller
 
     public function show($id): JsonResponse
     {
-        $Class = SchoolClass::find($id);
+        $Class = SchoolClass::with('grade')->find($id);
         if ($Class) {
             return success(new SchoolClassResource($Class), 'Class ' . $Class->name . " retrieved");
         }

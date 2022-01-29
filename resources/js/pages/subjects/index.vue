@@ -24,6 +24,9 @@
                         <v-list-item-subtitle v-if="subject.description">{{subject.description}}</v-list-item-subtitle>
                         <v-list-item-subtitle><strong>Type:</strong>{{subject.type}}</v-list-item-subtitle>
                     </v-list-item-content>
+                     <v-list-item-action-text>
+                            <v-icon>mdi-chevron-right</v-icon>
+                </v-list-item-action-text>
                 </v-list-item>
             </v-list>
         </v-col>

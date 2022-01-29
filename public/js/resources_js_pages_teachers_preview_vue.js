@@ -137,6 +137,11 @@ __webpack_require__.r(__webpack_exports__);
       newGrade: false
     };
   },
+  watch: {
+    id: function id() {
+      this.grade_id = this.id;
+    }
+  },
   methods: {
     gradeCreated: function gradeCreated(grade) {
       this.grades.unshift(grade);
@@ -155,6 +160,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getGrades();
+
+    if (this.id) {
+      this.grade_id = this.id;
+    }
   }
 });
 
@@ -212,13 +221,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewClass",
   components: {
     GradeSelector: _GradeSelector__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['edit'],
+  props: ['edit', "defaultClass"],
   data: function data() {
     return {
       name: "",
@@ -232,10 +244,23 @@ __webpack_require__.r(__webpack_exports__);
       return this.edit ? "Edit class" : "Create new class";
     }
   },
+  watch: {
+    defaultClass: function defaultClass() {
+      this.defaultClass();
+    }
+  },
   methods: {
+    setValues: function setValues() {
+      this.name = this.defaultClass.name;
+      this.description = this.defaultClass.description;
+      this.grade_id = this.defaultClass.grade_id;
+    },
     done: function done(Schoolclass) {
-      this.name = "";
-      this.description = "";
+      if (!this.edit) {
+        this.name = "";
+        this.description = "";
+      }
+
       this.$emit('created', Schoolclass);
       this.$emit('closed');
     },
@@ -248,7 +273,8 @@ __webpack_require__.r(__webpack_exports__);
         formData.append('name', this.name);
         formData.append('description', this.description);
         formData.append('grade_id', this.grade_id);
-        axios.post('/class', formData).then(function (res) {
+        var url = this.edit ? "/class/" + this.defaultClass.id : "/class";
+        axios.post(url, formData).then(function (res) {
           _this.progress = false;
 
           _this.done(res.data.data);
@@ -256,6 +282,11 @@ __webpack_require__.r(__webpack_exports__);
           _this.progress = false;
         });
       }
+    }
+  },
+  mounted: function mounted() {
+    if (this.edit) {
+      this.setValues();
     }
   }
 });
@@ -309,7 +340,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewGrade",
-  props: ['edit'],
+  props: ['edit', 'grade'],
   data: function data() {
     return {
       name: "",
@@ -320,9 +351,22 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     title: function title() {
       return this.edit ? "Edit Grade" : "Create New Grade/Level";
+    },
+    defaultGrade: function defaultGrade() {
+      return this.grade;
+    }
+  },
+  watch: {
+    defaultGrade: function defaultGrade() {
+      this.setValues();
     }
   },
   methods: {
+    setValues: function setValues() {
+      this.name = this.grade.name;
+      this.description = this.grade.description;
+      console.log(this.grade);
+    },
     done: function done(grade) {
       this.name = "";
       this.description = '';
@@ -337,7 +381,8 @@ __webpack_require__.r(__webpack_exports__);
         var formData = new FormData();
         formData.append('name', this.name);
         formData.append('description', this.description);
-        axios.post('/grade', formData).then(function (res) {
+        var url = this.edit ? '/grade/' + this.grade.id : "/grade";
+        axios.post(url, formData).then(function (res) {
           _this.progress = false;
 
           _this.done(res.data.data);
@@ -346,6 +391,9 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     }
+  },
+  mounted: function mounted() {
+    this.setValues();
   }
 });
 
@@ -2762,6 +2810,7 @@ var render = function () {
               }),
               _vm._v(" "),
               _c("grade-selector", {
+                attrs: { id: _vm.grade_id },
                 on: {
                   selected: function (id) {
                     return (_vm.grade_id = id)
@@ -2822,7 +2871,13 @@ var render = function () {
               },
               on: { click: _vm.save },
             },
-            [_vm._v("Save")]
+            [
+              _vm._v(
+                "Save\n            " +
+                  _vm._s(_vm.edit ? "Changes" : "") +
+                  "\n        "
+              ),
+            ]
           ),
         ],
         1

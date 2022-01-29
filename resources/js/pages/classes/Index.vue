@@ -16,11 +16,15 @@
                 :to="'classes/'+cl.id"
             >
                 <v-list-item-content>
-                    <v-list-item-title>{{cl.name}}</v-list-item-title>
-                    <v-list-item-subtitle>{{cl.description}}</v-list-item-subtitle>
-                    <v-list-item-subtitle><strong>Grade:</strong> {{cl.grade.name}}</v-list-item-subtitle>
-
+                    <v-list-item-title>{{ cl.name }}</v-list-item-title>
+                    <v-list-item-subtitle>{{ cl.description }}</v-list-item-subtitle>
+                    <v-list-item-subtitle><strong>Grade:</strong> {{ cl.grade.name }} <strong>Students:</strong> {{ cl.students }}</v-list-item-subtitle>
                 </v-list-item-content>
+
+                <v-list-item-action-text>
+                            <v-icon>mdi-chevron-right</v-icon>
+                </v-list-item-action-text>
+
             </v-list-item>
         </v-list>
     </v-col>
@@ -55,9 +59,10 @@ export default {
         }
     },
     methods: {
-        classCreated(cl){
+        classCreated(cl) {
             this.getClasses();
         },
+
         getClasses() {
             this.progress = true;
             axios.get('/classes')

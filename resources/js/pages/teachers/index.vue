@@ -8,7 +8,7 @@
 
 
     <v-row>
-        <v-col cols="12" sm="10" class="mx-auto">
+        <v-col cols="12" sm="8" class="mx-auto">
             <v-skeleton-loader type="list-item@10" v-if="progress"></v-skeleton-loader>
             <v-list v-else>
                 <teacher-item-component

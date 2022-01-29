@@ -22,6 +22,7 @@
 
                         <v-list-item-title>{{grade.name}}</v-list-item-title>
                         <v-list-item-subtitle>{{grade.description}}</v-list-item-subtitle>
+                            <v-list-item-subtitle> <strong>{{grade.students}}</strong> Students | <strong>{{grade.classes}}</strong> Class</v-list-item-subtitle>
                         </v-list-item-content>
 
                         <v-list-item-action-text>

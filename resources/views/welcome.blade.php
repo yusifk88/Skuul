@@ -40,6 +40,11 @@
                 <v-icon>mdi-magnify</v-icon>
             </v-btn>
 
+
+            <v-btn text>
+                Help
+            </v-btn>
+
             <v-menu
                 left
                 bottom

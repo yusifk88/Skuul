@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewGrade",
-  props: ['edit'],
+  props: ['edit', 'grade'],
   data: function data() {
     return {
       name: "",
@@ -59,9 +59,22 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     title: function title() {
       return this.edit ? "Edit Grade" : "Create New Grade/Level";
+    },
+    defaultGrade: function defaultGrade() {
+      return this.grade;
+    }
+  },
+  watch: {
+    defaultGrade: function defaultGrade() {
+      this.setValues();
     }
   },
   methods: {
+    setValues: function setValues() {
+      this.name = this.grade.name;
+      this.description = this.grade.description;
+      console.log(this.grade);
+    },
     done: function done(grade) {
       this.name = "";
       this.description = '';
@@ -76,7 +89,8 @@ __webpack_require__.r(__webpack_exports__);
         var formData = new FormData();
         formData.append('name', this.name);
         formData.append('description', this.description);
-        axios.post('/grade', formData).then(function (res) {
+        var url = this.edit ? '/grade/' + this.grade.id : "/grade";
+        axios.post(url, formData).then(function (res) {
           _this.progress = false;
 
           _this.done(res.data.data);
@@ -85,6 +99,9 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     }
+  },
+  mounted: function mounted() {
+    this.setValues();
   }
 });
 
@@ -175,6 +192,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_TitleBarComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/TitleBarComponent */ "./resources/js/components/TitleBarComponent.vue");
 /* harmony import */ var _components_NewGrade__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/NewGrade */ "./resources/js/components/NewGrade.vue");
+//
 //
 //
 //
@@ -745,6 +763,13 @@ var render = function () {
                               _vm._v(" "),
                               _c("v-list-item-subtitle", [
                                 _vm._v(_vm._s(grade.description)),
+                              ]),
+                              _vm._v(" "),
+                              _c("v-list-item-subtitle", [
+                                _c("strong", [_vm._v(_vm._s(grade.students))]),
+                                _vm._v(" Students | "),
+                                _c("strong", [_vm._v(_vm._s(grade.classes))]),
+                                _vm._v(" Class"),
                               ]),
                             ],
                             1
