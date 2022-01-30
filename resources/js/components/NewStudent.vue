@@ -3,7 +3,7 @@
         <v-card-title class="font-weight-light teal--text">{{ title }}</v-card-title>
         <v-card-text>
             <v-form ref="student_form" @keyup.native.enter="save">
-                <v-row>
+                <v-row v-if="!edit">
                     <v-col cols="12" sm="3">
                         <photo-selector
                             preview="/img/photo.png"
@@ -129,7 +129,7 @@
                     </v-col>
 
                     <v-col cols="12" sm="6">
-                        <class-selctor @selected="id=>class_id=id"></class-selctor>
+                        <class-selctor @selected="id=>class_id=id" :id="class_id"></class-selctor>
                     </v-col>
 
 
@@ -241,7 +241,9 @@
         <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn text rounded @click="$emit('closed')">Cancel</v-btn>
-            <v-btn text rounded :color="$store.state.app.ThemeColor" :loading="process" @click="save">Save</v-btn>
+            <v-btn text rounded :color="$store.state.app.ThemeColor" :loading="process" @click="save">Save
+                {{ edit ? "Changes" : "" }}
+            </v-btn>
         </v-card-actions>
     </v-card>
 </template>
@@ -253,7 +255,7 @@ import ClassSelctor from "./ClassSelctor";
 export default {
     name: "NewStudent",
     components: {ClassSelctor, PhotoSelector},
-    props: ['edit'],
+    props: ['edit', "student"],
     data() {
         return {
             residential_status: 'day',
@@ -306,18 +308,40 @@ export default {
         }
     },
     methods: {
+
+        setValues() {
+
+            this.first_name = this.student.first_name;
+            this.last_name = this.student.last_name;
+            this.other_names = this.student.other_names;
+            this.dob = dayjs(this.student.dob).format('YYYY-MM-DD');
+            this.address = this.student.address;
+            this.guardian_first_name = this.student.guardian_first_name;
+            this.guardian_last_name = this.student.guardian_last_name;
+            this.guardian_email = this.student.guardian_email;
+            this.guardian_phone_number = this.student.guardian_phone_number;
+            this.admission_date = dayjs(this.student.admission_date).format('YYYY-MM-DD');
+            this.previous_school = this.student.previous_school;
+            this.class_id = this.student.class_id;
+
+        },
         done(student) {
-            this.first_name = "";
-            this.last_name = "";
-            this.other_names = "";
-            this.dob = "";
-            this.address = "";
-            this.guardian_first_name = "";
-            this.guardian_last_name = "";
-            this.guardian_email = "";
-            this.guardian_phone_number = "";
-            this.admission_date = this.today;
-            this.$emit('created',student);
+            if (!this.edit) {
+
+
+                this.first_name = "";
+                this.last_name = "";
+                this.other_names = "";
+                this.dob = "";
+                this.address = "";
+                this.guardian_first_name = "";
+                this.guardian_last_name = "";
+                this.guardian_email = "";
+                this.guardian_phone_number = "";
+                this.admission_date = this.today;
+            }
+
+            this.$emit('created', student);
             this.$emit('closed');
 
         },
@@ -340,7 +364,9 @@ export default {
                 formData.append('guardian_phone_number', this.guardian_phone_number);
                 formData.append('class_id', this.class_id);
                 formData.append('photo', this.photo);
-                axios.post('/student', formData)
+
+                const url = this.edit ? '/student/' + this.student.id : '/student';
+                axios.post(url, formData)
                     .then(res => {
                         this.process = false;
                         this.done(res.data.data);
@@ -356,6 +382,10 @@ export default {
     },
     mounted() {
         this.admission_date = this.today;
+        if (this.edit) {
+
+            this.setValues();
+        }
     }
 }
 </script>

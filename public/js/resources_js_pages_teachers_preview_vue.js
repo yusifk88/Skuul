@@ -47,6 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "ClassSelctor",
+  props: ['id'],
   components: {
     NewClass: _NewClass__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -57,6 +58,13 @@ __webpack_require__.r(__webpack_exports__);
       class_id: null,
       NewClass: false
     };
+  },
+  watch: {
+    id: function id() {
+      if (this.id) {
+        this.class_id = this.id;
+      }
+    }
   },
   methods: {
     classCreated: function classCreated(cls) {
@@ -81,6 +89,10 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.getClasses();
+
+    if (this.id) {
+      this.class_id = this.id;
+    }
   }
 });
 

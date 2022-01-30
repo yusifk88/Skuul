@@ -1,5 +1,7 @@
 <template>
 
+    <span>
+
     <v-menu transition="scale-transition">
         <template v-slot:activator="{on,attr}">
             <v-btn
@@ -20,7 +22,7 @@
                 </v-list-item-title>
 
             </v-list-item>
-            <v-list-item>
+            <v-list-item @click="showEdit=true">
                 <v-list-item-title>
                     Edit
                 </v-list-item-title>
@@ -39,12 +41,29 @@
             </v-list-item>
         </v-list>
     </v-menu>
+<v-dialog scrollable persistent width="40%" v-model="showEdit">
+    <new-student @created="done" :student="student" :edit="true" @closed="showEdit=false"></new-student>
+</v-dialog>
+            </span>
+
 </template>
 
 <script>
+import NewStudent from "./NewStudent";
 export default {
     name: "StudentMenu",
-    props:['student']
+    components: {NewStudent},
+    props:['student'],
+    data(){
+        return{
+            showEdit:false
+        }
+    },
+    methods:{
+        done(student){
+            this.$emit("edited",student);
+        }
+    }
 }
 </script>
 

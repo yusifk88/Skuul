@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateStudentRequest;
+use App\Http\Requests\UpdateStudentRequest;
 use App\Http\Resources\StudentResource;
 use App\Http\Resources\UtilityRepository;
 use App\Models\Student;
@@ -34,7 +35,7 @@ class StudentsController extends Controller
     }
 
 
-    public function update(CreateStudentRequest $request, $student_id): JsonResponse
+    public function update(UpdateStudentRequest $request, $student_id): JsonResponse
     {
         if (!Student::where('id',$student_id)->exists()){
             return error([],"Student not found",Response::HTTP_NOT_FOUND);
@@ -42,5 +43,19 @@ class StudentsController extends Controller
 
         $student = StudentRepository::update($request, $student_id);
         return success(new StudentResource($student), "Student updated");
+    }
+
+
+    public function show(int $id){
+        $student = Student::with("studentClass")->find($id);
+
+        if ($student){
+
+            return success(new StudentResource($student),"Student ".$student->first_name." retrieved");
+
+        }
+        return error([],"Student not found",Response::HTTP_NOT_FOUND);
+
+
     }
 }

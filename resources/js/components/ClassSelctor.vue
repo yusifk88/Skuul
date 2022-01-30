@@ -35,6 +35,7 @@ import NewClass from "./NewClass";
 
 export default {
     name: "ClassSelctor",
+    props:['id'],
     components: {NewClass},
     data() {
         return {
@@ -43,6 +44,13 @@ export default {
             class_id: null,
             NewClass: false
         }
+    },
+    watch:{
+      id(){
+          if (this.id){
+              this.class_id =this.id;
+          }
+      }
     },
     methods: {
         classCreated(cls) {
@@ -70,6 +78,9 @@ export default {
     },
     mounted() {
         this.getClasses();
+        if (this.id){
+            this.class_id=this.id;
+        }
     }
 }
 </script>

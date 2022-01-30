@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Http\Requests\CreateStudentRequest;
+use App\Http\Requests\UpdateStudentRequest;
 use App\Models\Student;
 use Auth;
 
@@ -25,7 +26,7 @@ class StudentRepository
 
     }
 
-    public static function update(CreateStudentRequest $request, $id): Student
+    public static function update(UpdateStudentRequest $request, $id): Student
     {
 
         $student = Student::find($id);
