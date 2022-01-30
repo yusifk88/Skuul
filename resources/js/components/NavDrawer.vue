@@ -109,11 +109,7 @@ export default {
                     icon: 'mdi-account-multiple-outline',
                     route: '/teachers'
                 },
-                {
-                    title: 'Parents',
-                    icon: 'mdi-account-multiple-outline',
-                    route:'/parents'
-                },
+
             ],
             structureNavs: [
                 {

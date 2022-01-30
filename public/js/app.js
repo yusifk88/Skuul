@@ -5545,10 +5545,6 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Teachers',
         icon: 'mdi-account-multiple-outline',
         route: '/teachers'
-      }, {
-        title: 'Parents',
-        icon: 'mdi-account-multiple-outline',
-        route: '/parents'
       }],
       structureNavs: [{
         title: 'Grades/Levels',
