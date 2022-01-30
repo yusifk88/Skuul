@@ -12,12 +12,13 @@ class StudentRepository
     public static function create(CreateStudentRequest $request): Student
     {
 
-        $user = Auth::user();
         $data = $request->all();
+
         if ($request->hasFile('photo')) {
             $data['photo_url'] = $request->file('photo')->store('public/student_photos');
         }
-        $data['school_id'] = $user->school_id;
+
+        $data['school_id'] = SchoolRepository::CurrentSchool()->id;
         $student = new Student($data);
         $student->save();
         return $student;

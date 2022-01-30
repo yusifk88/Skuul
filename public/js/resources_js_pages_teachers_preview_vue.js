@@ -456,9 +456,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "NewSubject",
-  props: ['edit'],
+  props: ['edit', "subject"],
   data: function data() {
     return {
       type: 'core',
@@ -479,10 +481,22 @@ __webpack_require__.r(__webpack_exports__);
       return this.edit ? "Edit subject" : "Create new subject";
     }
   },
+  watch: {
+    subject: function subject() {
+      if (this.edit) {
+        this.name = this.subject.name;
+        this.description = this.subject.description;
+        this.type = this.subject.type;
+      }
+    }
+  },
   methods: {
     done: function done(subject) {
-      this.name = '';
-      this.description = '';
+      if (!this.edit) {
+        this.name = '';
+        this.description = '';
+      }
+
       this.$emit('created', subject);
       this.$emit('closed');
     },
@@ -494,7 +508,8 @@ __webpack_require__.r(__webpack_exports__);
         formData.append('name', this.name);
         formData.append('description', this.description);
         formData.append('type', this.type);
-        axios.post('/subject', formData).then(function (res) {
+        var url = this.edit ? "/subject/" + this.subject.id : "/subject";
+        axios.post(url, formData).then(function (res) {
           _this.progress = false;
 
           _this.done(res.data.data);
@@ -502,6 +517,13 @@ __webpack_require__.r(__webpack_exports__);
           _this.progress = false;
         });
       }
+    }
+  },
+  mounted: function mounted() {
+    if (this.edit) {
+      this.name = this.subject.name;
+      this.description = this.subject.description;
+      this.type = this.subject.type;
     }
   }
 });
@@ -2789,7 +2811,20 @@ var render = function () {
         [
           _c(
             "v-form",
-            { ref: "class_form" },
+            {
+              ref: "class_form",
+              nativeOn: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.save.apply(null, arguments)
+                },
+              },
+            },
             [
               _c("v-text-field", {
                 attrs: {
@@ -2920,7 +2955,20 @@ var render = function () {
         [
           _c(
             "v-form",
-            { ref: "grade_form" },
+            {
+              ref: "grade_form",
+              nativeOn: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.save.apply(null, arguments)
+                },
+              },
+            },
             [
               _c("v-text-field", {
                 attrs: {
@@ -3035,7 +3083,20 @@ var render = function () {
         [
           _c(
             "v-form",
-            { ref: "subject_form" },
+            {
+              ref: "subject_form",
+              nativeOn: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.save.apply(null, arguments)
+                },
+              },
+            },
             [
               _c("v-text-field", {
                 attrs: {
@@ -3127,7 +3188,13 @@ var render = function () {
               },
               on: { click: _vm.save },
             },
-            [_vm._v("Save")]
+            [
+              _vm._v(
+                "Save\n            " +
+                  _vm._s(_vm.edit ? "Changes" : "") +
+                  "\n        "
+              ),
+            ]
           ),
         ],
         1
@@ -3170,7 +3237,20 @@ var render = function () {
         [
           _c(
             "v-form",
-            { ref: "teacher_form" },
+            {
+              ref: "teacher_form",
+              nativeOn: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.save.apply(null, arguments)
+                },
+              },
+            },
             [
               _c(
                 "v-row",
@@ -4660,7 +4740,6 @@ var render = function () {
       _vm._v(" "),
       _c(
         "v-row",
-        { attrs: { dense: "" } },
         [
           _c(
             "v-col",

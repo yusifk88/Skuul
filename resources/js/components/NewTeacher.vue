@@ -2,7 +2,7 @@
     <v-card>
         <v-card-title class="font-weight-light teal--text">{{ title }}</v-card-title>
         <v-card-text>
-            <v-form ref="teacher_form">
+            <v-form ref="teacher_form" @keyup.native.enter="save">
                 <v-row dense>
                     <v-col cols="12" sm="6">
                         <v-text-field

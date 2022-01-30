@@ -8,6 +8,7 @@ use App\Http\Resources\SchoolClassResource;
 use App\Models\Grade;
 use App\Models\SchoolClass;
 use App\Repositories\GradeRepository;
+use App\Repositories\SchoolRepository;
 use Auth;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,10 +17,10 @@ class GradesController extends Controller
 {
     public function store(CreateGradeRequest $request): JsonResponse
     {
-        $user = Auth::user();
-        if (Grade::where('name', $request->name)->where('school_id', $user->school_id)->exists()) {
+        if (Grade::where('name', $request->name)->where('school_id', SchoolRepository::CurrentSchool()->id)->exists()) {
             return error([], "Grade with name " . $request->name . " already exist",Response::HTTP_UNPROCESSABLE_ENTITY);
         }
+
         $grade = GradeRepository::create($request);
         return success(new GradeResource($grade), "Created grade, " . $grade->name);
     }

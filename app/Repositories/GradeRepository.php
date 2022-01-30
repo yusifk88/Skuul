@@ -13,7 +13,7 @@ class GradeRepository
     {
 
         $data = $request->all();
-        $data['school_id'] = Auth::user()->school_id;
+        $data['school_id'] = SchoolRepository::CurrentSchool()->id;
         $grade = new Grade($data);
         $grade->save();
         return $grade;

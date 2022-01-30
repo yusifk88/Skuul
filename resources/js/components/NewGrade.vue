@@ -2,7 +2,7 @@
     <v-card>
         <v-card-title class="font-weight-light teal--text">{{ title }}</v-card-title>
         <v-card-text>
-            <v-form ref="grade_form">
+            <v-form ref="grade_form" @keyup.native.enter="save">
 
                 <v-text-field
                     outlined

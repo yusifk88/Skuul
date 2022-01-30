@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateSchoolRequest;
 use App\Http\Requests\CreatSchoolClassRequest;
 use App\Http\Resources\SchoolClassResource;
+use App\Http\Resources\UtilityRepository;
 use App\Models\Grade;
 use App\Models\SchoolClass;
 use App\Repositories\ClassesRepository;
+use App\Repositories\SchoolRepository;
 use Auth;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +19,7 @@ class SchoolClassesController extends Controller
 
     public function index(): JsonResponse
     {
-        $classes = SchoolClass::with('grade')->whereIn('grade_id', Grade::select('id')->where('school_id', Auth::user()->school_id))
+        $classes = SchoolClass::with('grade')->whereIn('grade_id', Grade::select('id')->where('school_id', SchoolRepository::CurrentSchool()->id))
             ->orderBy('name')->get();
         return success(SchoolClassResource::collection($classes), 'Classes retrieved');
     }

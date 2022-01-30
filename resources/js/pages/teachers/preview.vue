@@ -4,7 +4,7 @@
             :title="'Teacher Infor: '+TeacherName"
             :show-add-btn="false"
         ></title-bar-component>
-<v-row dense>
+<v-row>
 
     <v-col cols="12" sm="8" class="mx-auto">
         <v-skeleton-loader type="card" v-if="progress"></v-skeleton-loader>

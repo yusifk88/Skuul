@@ -6,6 +6,7 @@ use App\Http\Requests\CreateStudentRequest;
 use App\Http\Resources\StudentResource;
 use App\Http\Resources\UtilityRepository;
 use App\Models\Student;
+use App\Repositories\SchoolRepository;
 use App\Repositories\StudentRepository;
 use Auth;
 use Illuminate\Http\JsonResponse;
@@ -17,9 +18,8 @@ class StudentsController extends Controller
     public function index(): JsonResponse
     {
 
-        $user = Auth::user();
         $students = Student::with('studentClass')
-            ->where('school_id', $user->school_id)
+            ->where('school_id', SchoolRepository::CurrentSchool()->id)
             ->orderBy('first_name')
             ->paginate(UtilityRepository::PER_PAGE);
         return success(StudentResource::collection($students), "Students retrieved");

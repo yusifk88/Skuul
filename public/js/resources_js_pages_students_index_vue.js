@@ -1911,7 +1911,20 @@ var render = function () {
         [
           _c(
             "v-form",
-            { ref: "class_form" },
+            {
+              ref: "class_form",
+              nativeOn: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.save.apply(null, arguments)
+                },
+              },
+            },
             [
               _c("v-text-field", {
                 attrs: {
@@ -2042,7 +2055,20 @@ var render = function () {
         [
           _c(
             "v-form",
-            { ref: "grade_form" },
+            {
+              ref: "grade_form",
+              nativeOn: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.save.apply(null, arguments)
+                },
+              },
+            },
             [
               _c("v-text-field", {
                 attrs: {
@@ -2157,7 +2183,20 @@ var render = function () {
         [
           _c(
             "v-form",
-            { ref: "student_form" },
+            {
+              ref: "student_form",
+              nativeOn: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.save.apply(null, arguments)
+                },
+              },
+            },
             [
               _c(
                 "v-row",

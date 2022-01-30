@@ -62,6 +62,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/subject', [SubjectsController::class, 'store']);
     Route::post('/subject/{subject_id}', [SubjectsController::class, 'update']);
     Route::get('/subjects', [SubjectsController::class, 'index']);
+    Route::get('/subjects/{id}', [SubjectsController::class, 'show']);
 
     /**
      * Students Route

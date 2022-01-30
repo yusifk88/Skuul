@@ -509,7 +509,20 @@ var render = function () {
         [
           _c(
             "v-form",
-            { ref: "grade_form" },
+            {
+              ref: "grade_form",
+              nativeOn: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.save.apply(null, arguments)
+                },
+              },
+            },
             [
               _c("v-text-field", {
                 attrs: {
@@ -769,7 +782,7 @@ var render = function () {
                                 _c("strong", [_vm._v(_vm._s(grade.students))]),
                                 _vm._v(" Students | "),
                                 _c("strong", [_vm._v(_vm._s(grade.classes))]),
-                                _vm._v(" Class"),
+                                _vm._v(" Classes"),
                               ]),
                             ],
                             1
